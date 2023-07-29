@@ -12,22 +12,23 @@ html{
     font-size:62.5%;
     scroll-behavior: smooth;
     width: 100%;
-        height: 100%;
-
+    height: 100%;
 }
 
 body{
-    
     font-family: 'Montserat', sans-serif;
     width: 100%;
     height: 1000px;
     font-size: 1.6rem;
 }
 
-
-
 button{
     cursor:pointer;
+}
+
+a{
+    text-decoration:none;
+    color: inherit;
 }
 
 `

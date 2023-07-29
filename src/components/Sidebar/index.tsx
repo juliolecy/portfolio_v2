@@ -1,9 +1,11 @@
 import * as k from './styles'
 import React, { useEffect, useState } from 'react';
-import { AiOutlineMenu } from 'react-icons/ai';
+import { AiOutlineArrowUp, AiOutlineMenu } from 'react-icons/ai';
 import { SidebarContainer, SidebarToggle } from './styles'
+import handleScrollListener from '../../helpers/ScrollListener';
 
 const Sidebar = () => {
+
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false)
 
@@ -11,24 +13,13 @@ const Sidebar = () => {
     setIsOpen(!isOpen);
   };
 
-
   useEffect(()=>{
-    const scrollListener = ()=>{
-      if(window.scrollY > 20){
-        setScrolled(true)
-      } else {
-        setScrolled(false)
-      }
-    }
-    window.addEventListener('scroll', scrollListener);
-    return()=>{
-      window.removeEventListener('scroll', scrollListener);
-    }
-
+    handleScrollListener(20, setScrolled)
   },[]);
 
   return (
     <>
+    <k.Logo scrolled={scrolled}>JLins</k.Logo>
 
 <k.MenuButton 
   id='top' 
@@ -39,12 +30,21 @@ const Sidebar = () => {
 </k.MenuButton>
 
 <SidebarContainer isOpen={isOpen}>
-      <SidebarToggle onClick={handleToggleSidebar}>
-        <AiOutlineMenu />
+  <SidebarToggle onClick={handleToggleSidebar}>
+    <AiOutlineMenu />
       </SidebarToggle>
-      <div>
+
+    <div>
       hello world
     </div>
+
+  <k.SidebarFooter>
+    <div className="line"></div>
+    <div className="SocialMedia">
+      <AiOutlineArrowUp/>
+      <AiOutlineArrowUp/>
+    </div>
+  </k.SidebarFooter>
 </SidebarContainer>
     </>
   );
