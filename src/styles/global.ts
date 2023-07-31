@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyles =  createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
 *{
     margin:0;
     padding:0;
@@ -20,6 +20,8 @@ body{
     width: 100%;
     height: 1000px;
     font-size: 1.6rem;
+    background-color: ${({ theme }) => theme.primaryColor};
+    color: ${({ theme }) => theme.textColor};
 }
 
 button{
@@ -30,5 +32,4 @@ a{
     text-decoration:none;
     color: inherit;
 }
-
 `

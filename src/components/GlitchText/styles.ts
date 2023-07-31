@@ -32,6 +32,7 @@ background-position: center;
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
+  font-family: 'Montserrat';
 }
 .name {
   color: #ff4a54;
@@ -40,6 +41,7 @@ background-position: center;
 }
 
 .glitch {
+  font-family: 'Montserrat';
   position: relative;
   color: #fff;
   font-size: 4rem;

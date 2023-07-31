@@ -14,10 +14,8 @@ color: white;
 position: fixed;
 text-transform: uppercase;
 font-size: 2rem;
-letter-spacing: 2px;
 margin: 2rem;
 padding: 1rem;
-font-family: 'Lobster', cursive;
 text-decoration: none;
 z-index: 9;
 top: ${({scrolled}) => (scrolled  ? '-200px' : '0')};
@@ -28,6 +26,7 @@ background-size: 80%;
 -webkit-background-clip: text;
 -webkit-text-fill-color: rgba(255,255,255,0);
 animation: ${animate} 6s linear infinite;
+font-family: 'Zeyada';
 `
 
 export const MenuButton = styled.div<HeaderProps>`

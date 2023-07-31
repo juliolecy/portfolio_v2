@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { AiOutlineArrowUp, AiOutlineMenu } from 'react-icons/ai';
 import { SidebarContainer, SidebarToggle } from './styles'
 import handleScrollListener from '../../helpers/ScrollListener';
+import Toggle from '../Toggle';
 
 const Sidebar = () => {
 
@@ -44,6 +45,7 @@ const Sidebar = () => {
       <AiOutlineArrowUp/>
       <AiOutlineArrowUp/>
     </div>
+    <Toggle/>
   </k.SidebarFooter>
 </SidebarContainer>
     </>
