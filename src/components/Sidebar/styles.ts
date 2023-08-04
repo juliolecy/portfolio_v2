@@ -78,6 +78,7 @@ export const SidebarToggle = styled.button`
   cursor: pointer;
 `;
 
+
 export const Content = styled.div`
 font-family: 'Montserrat';
 display: flex;
@@ -87,6 +88,7 @@ margin: 0 auto;
 ul{
   list-style: none;
   text-align: center;
+  margin-bottom: 4rem;
   li{
     font-size: 2.5rem;
     margin-bottom: 1rem;
@@ -101,7 +103,9 @@ align-items: center;
 width: 100%;
 
 .SocialMedia{
-gap: 3rem;
+  font-size: 3.5rem;
+    display: flex;
+    gap: 4rem;
   svg{
     color: #fff;
   }

@@ -1,6 +1,8 @@
 import * as k from './styles'
 import React, { useEffect, useState } from 'react';
-import { AiOutlineArrowUp, AiOutlineMenu } from 'react-icons/ai';
+import { AiOutlineMenu } from 'react-icons/ai';
+import { DiGithub } from 'react-icons/di';
+import { TiSocialLinkedinCircular } from 'react-icons/ti';
 import handleScrollListener from '../../helpers/ScrollListener';
 import Toggle from '../Toggle';
 
@@ -13,45 +15,47 @@ const Sidebar = () => {
     setIsOpen(!isOpen);
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     handleScrollListener(20, setScrolled)
-  },[]);
+  }, []);
 
   return (
     <>
-    <k.Logo scrolled={scrolled}>JLins</k.Logo>
+      <k.Logo scrolled={scrolled}>JLins</k.Logo>
 
-<k.MenuButton 
-  id='top' 
-  scrolled={scrolled}
-  onClick={handleToggleSidebar}> 
-   <AiOutlineMenu/>
-   <h2>Menu</h2>
-</k.MenuButton>
+      <k.MenuButton
+        id='top'
+        scrolled={scrolled}
+        onClick={handleToggleSidebar}>
+        <AiOutlineMenu />
+        <h2>Menu</h2>
+      </k.MenuButton>
 
-<k.SidebarContainer isOpen={isOpen}>
-  <k.SidebarToggle onClick={handleToggleSidebar}>
-    <AiOutlineMenu />
-  </k.SidebarToggle>
+      <k.SidebarContainer isOpen={isOpen}>
+        <k.SidebarToggle onClick={handleToggleSidebar}>
+          <AiOutlineMenu />
+        </k.SidebarToggle>
 
-    <k.Content>
-      <ul>
-        <li>Início</li>
-        <li>Projetos</li>
-        <li>Skills</li>
-        <li>Contato</li>
-      </ul>
-    </k.Content>
+        <k.Content>
+          <ul>
+            <li>Início</li>
+            <li>Projetos</li>
+            <li>Skills</li>
+            <li>Contato</li>
+          </ul>
 
-  <k.SidebarFooter>
-    <div className="line"></div>
-    <div className="SocialMedia">
-      <AiOutlineArrowUp/>
-      <AiOutlineArrowUp/>
-    </div>
-    <Toggle/>
-  </k.SidebarFooter>
-</k.SidebarContainer>
+          <Toggle />
+
+        </k.Content>
+
+        <k.SidebarFooter>
+          <div className="line"></div>
+          <div className="SocialMedia">
+            <DiGithub/>
+            <TiSocialLinkedinCircular />
+          </div>
+        </k.SidebarFooter>
+      </k.SidebarContainer>
     </>
   );
 };
