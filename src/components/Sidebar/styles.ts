@@ -59,7 +59,7 @@ export const SidebarContainer = styled.div<SidebarContainerProps>`
   right: ${({isOpen}) => (isOpen ? '0' : '-300px')};
   width: 300px;
   height: 100vh;
-  background-color: #000;
+  background-color: ${props => props.theme.colors.primary};
   transition: right 0.3s ease-in-out;
   z-index: 10;
   display: flex;
@@ -77,6 +77,22 @@ export const SidebarToggle = styled.button`
   font-size: 24px;
   cursor: pointer;
 `;
+
+export const Content = styled.div`
+font-family: 'Montserrat';
+display: flex;
+flex-direction: column;
+color: ${props => props.theme.colors.text};
+margin: 0 auto;
+ul{
+  list-style: none;
+  text-align: center;
+  li{
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+}
+`
 
 export const SidebarFooter = styled.footer`
 display: flex;

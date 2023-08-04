@@ -1,7 +1,6 @@
 import * as k from './styles'
 import React, { useEffect, useState } from 'react';
 import { AiOutlineArrowUp, AiOutlineMenu } from 'react-icons/ai';
-import { SidebarContainer, SidebarToggle } from './styles'
 import handleScrollListener from '../../helpers/ScrollListener';
 import Toggle from '../Toggle';
 
@@ -30,14 +29,19 @@ const Sidebar = () => {
    <h2>Menu</h2>
 </k.MenuButton>
 
-<SidebarContainer isOpen={isOpen}>
-  <SidebarToggle onClick={handleToggleSidebar}>
+<k.SidebarContainer isOpen={isOpen}>
+  <k.SidebarToggle onClick={handleToggleSidebar}>
     <AiOutlineMenu />
-      </SidebarToggle>
+  </k.SidebarToggle>
 
-    <div>
-      hello world
-    </div>
+    <k.Content>
+      <ul>
+        <li>Início</li>
+        <li>Projetos</li>
+        <li>Skills</li>
+        <li>Contato</li>
+      </ul>
+    </k.Content>
 
   <k.SidebarFooter>
     <div className="line"></div>
@@ -47,7 +51,7 @@ const Sidebar = () => {
     </div>
     <Toggle/>
   </k.SidebarFooter>
-</SidebarContainer>
+</k.SidebarContainer>
     </>
   );
 };
