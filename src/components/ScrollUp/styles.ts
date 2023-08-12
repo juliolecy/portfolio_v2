@@ -16,7 +16,7 @@ align-items: center;
 background-color: #000;
 transition: .7s;
 svg{
-    font-size: 2rem;
+    font-size: 3rem;
     color: var(--main-color);
 }
 `

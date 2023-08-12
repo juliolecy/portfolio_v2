@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 import HomeBackground from '../../assets/backgroundHome.jpg'
-import { Morph } from '../../styles/keyframes'
+import { Arrow, Morph } from '../../styles/keyframes'
 
 export const Container = styled.div`
 position: relative;
@@ -36,6 +36,40 @@ span{
     color: ${props=> props.theme.colors.textSecondary};
 }
 
+.arrows {
+	width: 60px;
+	height: 72px;
+	position: absolute;
+	left: 50%;
+	margin-left: -30px;
+    bottom: 7rem;
+    z-index:1;
+
+}
+
+.arrows path {
+	stroke: #4ebfff;
+	fill: transparent;
+	stroke-width: 1px;	
+	animation: ${Arrow} 2s infinite;
+	-webkit-animation: ${Arrow} 2s infinite; 
+}
+
+
+.arrows path.a1 {
+	animation-delay:-1s;
+	-webkit-animation-delay:-1s; /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+	animation-delay:-0.5s;
+	-webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+}
+
+.arrows path.a3 {	
+	animation-delay:0s;
+	-webkit-animation-delay:0s; /* Safari 和 Chrome */
+}
 
  .shadow{
     background: ${props=>props.theme.title ==='dark' ? 'linear-gradient(0deg,#000 10%,transparent 90%)' : 'linear-gradient(0deg,#fff 10%,transparent 90%)'};

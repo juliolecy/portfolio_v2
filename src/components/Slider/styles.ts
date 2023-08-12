@@ -4,9 +4,9 @@ import { Morph } from '../../styles/keyframes'
 import { scroll } from '../../styles/keyframes'
 
 export const SliderContainer = styled.div`
-min-height:50vh ;
 display: grid;
 place-items:center;
+margin: 4rem 0;
 
 .slider {
  height: 150px;

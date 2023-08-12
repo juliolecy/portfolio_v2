@@ -5,8 +5,12 @@ import * as k from './styles'
 import GlitchText from '../GlitchText';
 import { ProjectsArray } from '../../utils/data';
 import ProjectsCard from '../ProjectsCard';
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+import { useEffect } from 'react'
 
-const Portfolio = () => {
+const Projects = () => {
+
   return (
 
     <k.Container>
@@ -16,12 +20,17 @@ const Portfolio = () => {
 
         <GlitchText text='Projetos'/>
         <h2>Conheça alguns dos meus projetos</h2>
+        <div className="line"></div>
 
 
 
-        {ProjectsArray.map((item, index) => (
+        {ProjectsArray.map((item, index) =>
+         (
           <ProjectsCard
+          
+            reverse={index}
             key={index}
+    
             title={item.title}
             desc={item.desc}
             img={item.img}
@@ -35,8 +44,9 @@ const Portfolio = () => {
 
 
       </div>
+
     </k.Container>
   );
 };
 
-export default Portfolio;
+export default Projects;

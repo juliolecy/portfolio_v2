@@ -253,3 +253,11 @@ export const GlitchSkew = keyframes`
     transform: skew(1deg);
   }
 `
+export const Arrow = keyframes`
+0%{opacity:0};
+40% {opacity:1};
+80% {opacity:0};
+100% {opacity:0};
+`
+
+

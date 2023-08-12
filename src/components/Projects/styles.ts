@@ -49,12 +49,19 @@ background-color: ${props=> props.theme.colors.primary};
     margin-bottom: 1rem;
   }
   h2{
-    margin-bottom: 4rem;
     font-family: 'Montserrat';
     color: ${props=> props.theme.colors.text};
-    font-weight: 300;
+    font-weight: 200;
     font-size: 2rem;
   }
+}
+
+.line{
+    height: 1px;
+    background:linear-gradient(to right, transparent, #5d5d5d73, #38161600);
+    border-radius: 50%;
+    width: 100%;
+    margin: 4rem 0;
 }
 
 @media screen and (max-width:414px){

@@ -10,6 +10,8 @@ const Skills = () => {
   <k.Container>
 
     <GlitchText text='Habilidades'/>
+    <h2>Estes são alguns dos meus conhecimentos</h2>
+    <div className="line"></div>
 
     <Accordion/>
 

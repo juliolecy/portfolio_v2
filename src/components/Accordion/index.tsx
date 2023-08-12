@@ -1,6 +1,6 @@
 import * as k from './styles'
 import React, { useEffect, useState } from 'react';
-
+import {GoDot, GoDotFill} from 'react-icons/go'
 const Accordion = () => {
   return (
   
@@ -17,8 +17,8 @@ const Accordion = () => {
                 <li>#Javascript</li>
               </ul>
             </div>
-            <i className="icon ion-md-arrow-forward"></i>
-            <i className="icon ion-md-arrow-down"></i>
+            <i className="icon ion-md-arrow-forward"><GoDot/></i>
+            <i className="icon ion-md-arrow-down"><GoDotFill/></i>
           </a>
           <div className="answer">
             <p> HTML CSS JAVASCRIPT REACT NEXTJS</p>
@@ -35,8 +35,8 @@ const Accordion = () => {
                 <li>#Javascript</li>
               </ul>
             </div>
-            <i className="icon ion-md-arrow-forward"></i>
-            <i className="icon ion-md-arrow-down"></i>
+            <i className="icon ion-md-arrow-forward"><GoDot/></i>
+            <i className="icon ion-md-arrow-down"><GoDotFill/></i>
           </a>
           <div className="answer">
             <p>JAVASCRIPT NODE EXPRESS SEQUELIZE</p>
@@ -52,8 +52,8 @@ const Accordion = () => {
                 <li>SQL</li>
               </ul>
             </div>
-            <i className="icon ion-md-arrow-forward"></i>
-            <i className="icon ion-md-arrow-down"></i>
+            <i className="icon ion-md-arrow-forward"><GoDot/></i>
+            <i className="icon ion-md-arrow-down"><GoDotFill/></i>
           </a>
           <div className="answer">
             <p>LTYPESCRIPT SQL MONGODB POSTGRESQL MYSQL BOOTSTRAP MATERIAL UI STYLED-COMPONENTS SASS</p>

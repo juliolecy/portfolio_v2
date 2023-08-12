@@ -21,7 +21,7 @@ align-items: center;
     top: 0; 
     left: 0;
     width: 100%; 
-    height: 100vh;  
+    height: 100%;  
     opacity: .1; 
     background-position: center;
     background-size: auto;
@@ -31,8 +31,24 @@ align-items: center;
     background-repeat: no-repeat;
 }
 
+.line{
+    height: 1px;
+    background:linear-gradient(to right, transparent, #5d5d5d73, #38161600);
+    border-radius: 50%;
+    width: 100%;
+    margin: 2rem 0;
+};
+
+h2{
+    font-family: 'Montserrat';
+    color: ${props=> props.theme.colors.text};
+    font-weight: 200;
+    font-size: 2rem;
+    margin-bottom:2rem ;
+  }
+
 .glitch{
-  margin-bottom:4rem ;
+  margin:4rem 0 2rem 0 ;
 }
 `
 

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import backgroundPNG from '../../assets/hello-world.webp'
 
+
 export const ProjectContainer = styled.div`
 display: flex;
 align-items: center;
@@ -8,7 +9,6 @@ justify-content: center;
 gap: 2rem;
 font-family: 'Montserrat';
 margin: 0 auto 4rem auto;
-
 background: rgba( 0, 0, 0, 0.2 );
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 backdrop-filter: blur( 8.5px );
