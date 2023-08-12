@@ -27,8 +27,8 @@ const Sidebar = () => {
         id='top'
         scrolled={scrolled}
         onClick={handleToggleSidebar}>
-        <AiOutlineMenu />
         <h2>Menu</h2>
+        <AiOutlineMenu />
       </k.MenuButton>
 
       <k.SidebarContainer isOpen={isOpen}>

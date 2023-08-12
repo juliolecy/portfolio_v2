@@ -25,13 +25,20 @@ flex-direction: column;
     z-index: -1;
     background-position: center;
     background-size: cover;
-    background-color: #1E1E1E;
-    background-image: url(${HomeBackground});
-    filter: brightness(0.5);
+    background-color: ${props=> props.theme.colors.primary};
+
+    background-image: ${props=> props.theme.title === 'dark' ? `linear-gradient(rgb(0 0 0 / 78%), rgb(0 0 0 / 64%)), url(${HomeBackground})` : `linear-gradient(rgb(0 0 0 / 0%), rgb(255 255 255 / 32%)), url(${HomeBackground})`};
 }
 
+span{
+    font-family: 'Barlow';
+    font-size: 2rem;
+    color: ${props=> props.theme.colors.textSecondary};
+}
+
+
  .shadow{
-    background: linear-gradient(0deg,#000 10%,transparent 90%);
+    background: ${props=>props.theme.title ==='dark' ? 'linear-gradient(0deg,#000 10%,transparent 90%)' : 'linear-gradient(0deg,#fff 10%,transparent 90%)'};
     bottom: 0;
     position: absolute;
     width: 100%;
@@ -56,83 +63,4 @@ flex-direction: column;
     }
 
 }
-`
-
-export const ApresentationContainer = styled.div`
-display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    font-family: 'Poppins';
-
-    span{
-        font-weight: 200;
-        font-size: 3rem;
-    }
-
-    h1{
-    font-size: 6rem;
-    text-transform: uppercase;
-    letter-spacing: 3rem;
-    text-align: center;
-    margin-bottom: 6rem;
-    }
-
-    .SocialMedia{
-        display: flex;
-        gap: 2rem;
-
-        svg{
-            font-size:3rem;
-        }
-}
-
-    @media screen and (max-width: 750px){
-        h1{
-            font-size: 5rem;
-            letter-spacing: 2.5rem;
-        }
-    }
-`
-
-export const TextMorph = styled.div`
-color: white;
-position: relative;
-display: flex;
-flex-direction: column;
-align-items: flex-end;
-justify-content: center;
-margin-right: 60px;
-    
-    .word:nth-child(1){
-        animation-delay: -10s;
-    }
-    
-    .word:nth-child(2){
-        animation-delay: -7s;
-    }
-    
-    .word:nth-child(3){
-        animation-delay: -4s;
-    }
-    
-    .word{
-        font-size: 2rem;
-        font-weight: 600;
-        letter-spacing: 5px;
-        text-transform: uppercase;
-        position: absolute;
-        left:0;
-        animation: ${Morph} 4s infinite ease;
-
-        min-width: 500px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-        .thin-span{
-            top: 80%;
-        }
-    }
-
-
 `

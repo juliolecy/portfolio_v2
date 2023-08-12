@@ -10,7 +10,7 @@ interface HeaderProps {
 }
 
 export const Logo = styled.h1<HeaderProps>`
-color: white;
+color: ${props=> props.theme.colors.text};
 position: fixed;
 text-transform: uppercase;
 font-size: 2rem;
@@ -48,9 +48,16 @@ svg{
 }
 
 h2{
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.8rem;
+  font-family: 'Barlow',sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    transition: 1s all ease;
+
+    &:hover{
+      color: #00d5c3;
+    }
 }
+
 `
 
 export const SidebarContainer = styled.div<SidebarContainerProps>`
@@ -73,7 +80,7 @@ export const SidebarToggle = styled.button`
   left: 10px;
   background: transparent;
   border: none;
-  color: #fff;
+  color:${props=> props.theme.colors.text};
   font-size: 24px;
   cursor: pointer;
 `;
@@ -107,7 +114,7 @@ width: 100%;
     display: flex;
     gap: 4rem;
   svg{
-    color: #fff;
+    color: ${props=> props.theme.colors.text};
   }
 }
 

@@ -18,6 +18,5 @@ transition: .7s;
 svg{
     font-size: 2rem;
     color: var(--main-color);
-    transform: rotate(270deg);
 }
 `
