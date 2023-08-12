@@ -5,6 +5,8 @@ import { DiGithub } from 'react-icons/di';
 import { TiSocialLinkedinCircular } from 'react-icons/ti';
 import handleScrollListener from '../../helpers/ScrollListener';
 import Toggle from '../Toggle';
+import { Link as ScrollLink, animateScroll } from 'react-scroll'
+
 
 const Sidebar = () => {
 
@@ -18,6 +20,11 @@ const Sidebar = () => {
   useEffect(() => {
     handleScrollListener(20, setScrolled)
   }, []);
+
+  const handleScrollTo = (position:number) =>{
+    animateScroll.scrollTo(position);
+    setIsOpen(!isOpen);
+  }
 
   return (
     <>
@@ -38,10 +45,9 @@ const Sidebar = () => {
 
         <k.Content>
           <ul>
-            <li>Início</li>
-            <li>Projetos</li>
-            <li>Skills</li>
-            <li>Contato</li>
+            <li onClick={()=>handleScrollTo(0)}>Início </li>
+            <li onClick={()=>handleScrollTo(746)}>Projetos</li>
+            <li onClick={()=>handleScrollTo(1738)}>Skills</li>
           </ul>
 
           <Toggle />

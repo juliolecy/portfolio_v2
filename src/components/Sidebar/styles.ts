@@ -99,6 +99,12 @@ ul{
   li{
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    transition: .5s all ease;
+
+    &:hover{
+      cursor: pointer;
+    color: #969696;
+    }
   }
 }
 `
