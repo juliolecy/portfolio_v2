@@ -9,9 +9,7 @@ const Skills = () => {
   
   <k.Container>
 
-    <GlitchText text='Habilidades'>
-      Habilidades
-    </GlitchText>
+    <GlitchText text='Habilidades'/>
 
     <Accordion/>
 

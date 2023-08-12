@@ -5,7 +5,7 @@ interface GlitchText {
   text: string;
 }
 
-const GlitchText: React.FC = ({text}: GlitchText) => {
+const GlitchText = ({text}: GlitchText) => {
 
   return (
     <>

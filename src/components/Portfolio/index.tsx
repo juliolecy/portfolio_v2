@@ -14,7 +14,7 @@ const Portfolio = () => {
 
       <div className='principal'>
 
-        <GlitchText text='Projetos'>Projetos</GlitchText>
+        <GlitchText text='Projetos'/>
         <h2>Conheça alguns dos meus projetos</h2>
 
 
