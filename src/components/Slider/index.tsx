@@ -18,7 +18,9 @@ export default function Slider() {
         <div className="slide-track">
       {
         skills.map((item, index)=>
-        <div className="slide">
+        <div 
+        className="slide"
+        key={index}>
             <img src={item.src} alt="react icon"  />
           </div>
         )
@@ -26,7 +28,9 @@ export default function Slider() {
        {
         skills.map((item, index)=>
   
-        <div className="slide">
+        <div 
+        key={index}
+        className="slide">
             <img src={item.src} alt="react icon"  />
           </div>
         )
