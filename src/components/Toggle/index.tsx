@@ -1,7 +1,5 @@
-import dark from '../../styles/themes/dark';
-import light from '../../styles/themes/light';
 import * as k from './styles'
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext} from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 import ReactSwitch from 'react-switch';
 import {MdOutlineDarkMode} from 'react-icons/md'
@@ -22,8 +20,12 @@ const Toggle: React.FC = () => {
         height={10}
         width={40}
         handleDiameter={20}
-        offColor='#b90000'
-        onColor='#fff'>
+        onColor='#ffffff'
+        onHandleColor='#00d9ff'
+
+        offColor='#e8e8e8'
+        offHandleColor='#3c3c3c'>
+
         </ReactSwitch>
 
         <FaRegSun/>

@@ -49,14 +49,14 @@ const Accordion = () => {
               <h3>Outros conhecimentos</h3>
               <ul>
                 <li>#Typescript</li>
-                <li>SQL</li>
+                <li>#SQL</li>
               </ul>
             </div>
             <i className="icon ion-md-arrow-forward"><GoDot/></i>
             <i className="icon ion-md-arrow-down"><GoDotFill/></i>
           </a>
           <div className="answer">
-            <p>LTYPESCRIPT SQL MONGODB POSTGRESQL MYSQL BOOTSTRAP MATERIAL UI STYLED-COMPONENTS SASS</p>
+            <p>TYPESCRIPT SQL MONGODB POSTGRESQL MYSQL BOOTSTRAP MATERIAL UI STYLED-COMPONENTS SASS</p>
           </div>
           <hr/>
       </k.AccordionItem>

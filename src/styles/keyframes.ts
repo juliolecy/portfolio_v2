@@ -259,5 +259,13 @@ export const Arrow = keyframes`
 80% {opacity:0};
 100% {opacity:0};
 `
+export const Wave = keyframes`
+  50%,
+  75% {
+    transform: scale(2.5);
+  }
 
-
+  80%,
+  100% {
+    opacity: 0;
+  }`

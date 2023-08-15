@@ -24,6 +24,13 @@ body{
     color: ${({ theme }) => theme.textColor};
 }
 
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: #000000f2;
+}
+::-webkit-scrollbar-thumb{
+    background-color:#00edf8;
+}
 button{
     cursor:pointer;
 }

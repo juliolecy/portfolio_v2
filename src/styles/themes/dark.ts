@@ -5,6 +5,7 @@ export default {
         secondary: '#0A0903',
         background: '#0A0903',
         text: '#f5f5f5',
-        textSecondary: '#ffffff9c'
+        textSecondary: '#c3c3c3',
+        textLogin: '#c3c3c3'
     }
 }

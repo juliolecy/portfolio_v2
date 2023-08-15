@@ -114,6 +114,15 @@ display: flex;
 flex-direction: column;
 align-items: center;
 width: 100%;
+span{
+  margin-bottom: 4rem;
+  button{
+    border: none;
+    background-color: #6d6d6d00;
+    color: ${props=>props.theme.colors.textLogin};
+    font-family: 'Montserrat';
+  }
+}
 
 .SocialMedia{
   font-size: 3.5rem;

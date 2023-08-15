@@ -8,6 +8,7 @@ import ProjectsCard from '../ProjectsCard';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect, useState } from 'react'
+import Loading from '../Loading';
 
 interface Project {
 desc: string;
@@ -46,7 +47,9 @@ const Projects = () => {
         <GlitchText text='Projetos'/>
         <h2>Conheça alguns dos meus projetos</h2>
         <div className="line"></div>
-
+      {projects.length === 0 &&
+      <Loading/>
+      }
 
 
         {projects.length > 0 && projects.map((item, index) =>

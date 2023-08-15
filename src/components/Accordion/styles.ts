@@ -52,7 +52,7 @@ border-radius: .4rem;
 
     li{
     font-size: 10px;
-    color: rgba(255, 255, 255, 0.4);
+    color: ${props=>props.theme.colors.textSecondary};
     padding: 0 0 1px 5px;
     }
   }

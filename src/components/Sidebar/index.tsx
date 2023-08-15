@@ -55,6 +55,7 @@ const Sidebar = () => {
         </k.Content>
 
         <k.SidebarFooter>
+          <span><button onClick={()=>alert('Funcionalidade em desenvolvimentoo.')}>Entrar como administrador?</button></span>
           <div className="line"></div>
           <div className="SocialMedia">
             <DiGithub/>

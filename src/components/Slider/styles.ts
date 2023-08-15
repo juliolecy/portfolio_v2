@@ -39,7 +39,7 @@ margin: 4rem 0;
 }
  .slide-track{
      display: flex;
-     width: calc(150px * 18);
+     width: calc(150px * 28);
      animation: ${scroll} 40s linear infinite; 
  }
  .slide{
