@@ -1,6 +1,6 @@
 ---
 <h1 align="center"> 
- Portfolio_v2 API
+ Portfolio_v2
 </h1>
 
 <p align="center">
@@ -15,7 +15,7 @@
 
 <div  align="center">
   <a>
-    <img src="https://skillicons.dev/icons?i=typescript,js,nodejs,express,sequelize,postgresql" />
+    <img src="https://skillicons.dev/icons?i=react,typescript,styledcomponents" />
   </a>
 </div>
 
