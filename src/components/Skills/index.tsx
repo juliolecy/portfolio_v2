@@ -7,7 +7,7 @@ import * as k from './styles'
 const Skills = () => {
   return (
   
-  <k.Container>
+  <k.Container name="skills" className='skills' id='skills'>
 
     <GlitchText text='Habilidades'/>
     <h2>Estes são alguns dos meus conhecimentos</h2>

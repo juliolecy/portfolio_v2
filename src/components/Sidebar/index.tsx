@@ -5,7 +5,7 @@ import { DiGithub } from 'react-icons/di';
 import { TiSocialLinkedinCircular } from 'react-icons/ti';
 import handleScrollListener from '../../helpers/ScrollListener';
 import Toggle from '../Toggle';
-import { Link as ScrollLink, animateScroll } from 'react-scroll'
+import {  Link as ScrollLink, animateScroll, scroller } from 'react-scroll'
 
 
 const Sidebar = () => {
@@ -20,6 +20,16 @@ const Sidebar = () => {
   useEffect(() => {
     handleScrollListener(20, setScrolled)
   }, []);
+
+  const handleScroll = (name:string) =>{
+    scroller.scrollTo(name, {
+      duration: 1500,
+      delay: 100,
+      smooth: true,
+      containerId: 'ContainerElementID',
+      offset: 50
+    })
+  }
 
   const handleScrollTo = (position:number) =>{
     animateScroll.scrollTo(position);
@@ -45,9 +55,39 @@ const Sidebar = () => {
 
         <k.Content>
           <ul>
-            <li onClick={()=>handleScrollTo(0)}>Início </li>
-            <li onClick={()=>handleScrollTo(746)}>Projetos</li>
-            <li onClick={()=>handleScrollTo(1738)}>Skills</li>
+          <li>
+          <ScrollLink to='start' 
+          spy={true}
+          smooth={true}
+          duration={500}
+          activeClass="active"
+          onClick={()=>setIsOpen(!isOpen)}>
+          Início
+
+          </ScrollLink>
+          </li>
+          <li>
+          <ScrollLink to='projects' 
+          spy={true}
+          smooth={true}
+          duration={500}
+          activeClass="active"
+          onClick={()=>setIsOpen(!isOpen)}>
+          Projetos
+
+          </ScrollLink>
+         </li>
+         <li>
+          <ScrollLink to='skills' 
+          spy={true}
+          smooth={true}
+          duration={500}
+          activeClass="active"
+          onClick={()=>setIsOpen(!isOpen)}>
+          Skills
+
+          </ScrollLink>
+         </li>
           </ul>
 
           <Toggle />
@@ -58,8 +98,12 @@ const Sidebar = () => {
           <span><button onClick={()=>alert('Funcionalidade em desenvolvimentoo.')}>Entrar como administrador?</button></span>
           <div className="line"></div>
           <div className="SocialMedia">
+            <a target='_blank' href="https://github.com/juliolecy/">
             <DiGithub/>
+            </a>
+            <a target='_blank' href="https://www.linkedin.com/in/jlins/">
             <TiSocialLinkedinCircular />
+            </a>
           </div>
         </k.SidebarFooter>
       </k.SidebarContainer>

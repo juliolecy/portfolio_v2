@@ -34,8 +34,8 @@ data-aos="fade-right" data-aos-duration="1000"
     </div>
 
     <div className="links">
-      <a href={props.git}>CODE <FiGithub/> </a>
-      <a href={props.deploy}>DEMO <BiLinkExternal/> </a>
+      <a target='_blank' href={props.git}>CODE <FiGithub/> </a>
+      <a target='_blank' href={props.deploy}>DEMO <BiLinkExternal/> </a>
     </div>
 
   </div>

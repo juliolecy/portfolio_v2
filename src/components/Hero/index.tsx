@@ -12,7 +12,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <k.Container>
+    <k.Container className='start'>
       <span
       data-aos="zoom-out" data-aos-duration="4000"
       >Olá, meu nome é</span>

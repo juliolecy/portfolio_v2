@@ -39,12 +39,12 @@ const Projects = () => {
 
   return (
 
-    <k.Container>
+    <k.Container className='projects' > 
       <div className="shadow"></div>
 
-      <div className='principal'>
+      <div  className='principal'>
 
-        <GlitchText text='Projetos'/>
+        <GlitchText  text='Projetos'/>
         <h2>Conheça alguns dos meus projetos</h2>
         <div className="line"></div>
       {projects.length === 0 &&
