@@ -6,6 +6,7 @@ import { TiSocialLinkedinCircular } from 'react-icons/ti';
 import handleScrollListener from '../../helpers/ScrollListener';
 import Toggle from '../Toggle';
 import {  Link as ScrollLink, animateScroll, scroller } from 'react-scroll'
+import { Link } from 'react-router-dom';
 
 
 const Sidebar = () => {
@@ -95,7 +96,10 @@ const Sidebar = () => {
         </k.Content>
 
         <k.SidebarFooter>
-          <span><button onClick={()=>alert('Funcionalidade em desenvolvimentoo.')}>Entrar como administrador?</button></span>
+            <Link to='/admin'>
+          <span><button onClick={()=>setIsOpen(!isOpen)}>
+            Entrar como administrador?</button></span>
+            </Link>
           <div className="line"></div>
           <div className="SocialMedia">
             <a target='_blank' href="https://github.com/juliolecy/">
