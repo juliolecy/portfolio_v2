@@ -4,7 +4,9 @@ import { GlobalStyles } from './styles/global'
 import { ThemeProvider } from 'styled-components'
 import { ThemeContext } from './context/ThemeContext'
 import { Route, BrowserRouter, Routes } from "react-router-dom";
+import Login from './pages/Login'
 import Admin from './pages/Admin'
+import Edit from './pages/Edit'
 
 function App() {
   const {theme} = useContext(ThemeContext)
@@ -15,7 +17,9 @@ function App() {
     <Routes>
 
       <Route element={<Home/>} path='/' />
+      <Route element={<Login/>} path='/login' />
       <Route element={<Admin/>} path='/admin' />
+      <Route element={<Edit/>} path='/projeto/:title' />
     </Routes>
     </ThemeProvider>
    

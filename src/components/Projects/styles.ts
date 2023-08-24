@@ -1,10 +1,7 @@
 import styled from 'styled-components';
 import backgroundPNG from '../../assets/lines.png'
 
-interface Container {
-  name: string;
-}
-export const Container = styled.div<Container>`
+export const Container = styled.div`
 position: relative;
 width: 100%;
 height: auto;

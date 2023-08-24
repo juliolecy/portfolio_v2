@@ -1,14 +1,11 @@
-import { BiLinkExternal } from 'react-icons/bi';
-import { FiGithub } from 'react-icons/fi';
-import Slider from '../Slider';
 import * as k from './styles'
 import GlitchText from '../GlitchText';
-import { ProjectsArray } from '../../utils/data';
 import ProjectsCard from '../ProjectsCard';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect, useState } from 'react'
 import Loading from '../Loading';
+import Fetch from '../../helpers/Fetch'
 
 interface Project {
 desc: string;
@@ -23,23 +20,18 @@ deploy: string;
 const Projects = () => {
   const [projects, setProjects] = useState<Project[]>([]);
 
-    useEffect(()=>{
-      const getProjects = async () => {
-        try {
-          const response = await fetch('https://portfolio-v2-backend-rcw0.onrender.com/api/projects');
-          const data = await response.json();
-          setProjects(data.projects)
-        } catch (error) {
-          console.error('Erro ao buscar dados da API:', error);
-        }
-      };
-  
-      getProjects();
+    useEffect( ()=>{
+        const fetchData = async ()=>{
+        const data = await Fetch.getProjects()
+        console.log(data)
+        setProjects(data)
+      }
+      fetchData()
     }, [])
 
   return (
 
-    <k.Container className='projects' > 
+    <k.Container className='projects'> 
       <div className="shadow"></div>
 
       <div  className='principal'>

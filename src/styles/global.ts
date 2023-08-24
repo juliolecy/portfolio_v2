@@ -18,7 +18,6 @@ html{
 body{
     font-family: 'Montserat', sans-serif;
     width: 100%;
-    height: 1000px;
     font-size: 1.6rem;
     background-color: ${({ theme }) => theme.primaryColor};
     color: ${({ theme }) => theme.textColor};

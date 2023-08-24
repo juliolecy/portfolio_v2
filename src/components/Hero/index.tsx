@@ -5,8 +5,13 @@ import { useEffect } from 'react'
 import GlitchText from '../GlitchText';
 import { DiGithub } from 'react-icons/di'
 import { TiSocialLinkedinCircular } from 'react-icons/ti'
+import Cookies from 'js-cookie';
+
 export default function Hero() {
 
+  const jwtToken = Cookies.get('jwtToken');
+  console.log(jwtToken)
+  
   useEffect(() => {
     AOS.init()
   }, [])

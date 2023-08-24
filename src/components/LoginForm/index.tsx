@@ -2,20 +2,34 @@ import * as k from './styles'
 import React, { useEffect, useState } from 'react';
 import { DiGithub } from 'react-icons/di';
 import { TiSocialLinkedinCircular } from 'react-icons/ti';
-const Login = () => {
+import { useNavigate } from 'react-router-dom';  
+import Cookies from 'js-cookie';
+const LoginForm = () => {
+
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const [logged, setLogged] = useState(false)
 
+  useEffect(()=>{
+    if(logged){
+      navigate('/admin')
+    }
+  },[logged])
+ 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) =>{
     e.preventDefault();
 
     if(email === ''){
-      return 'Insira um email'
+      setError('Insira um email')
+      return 
     }
-
+    
     if(password === ''){
-      return 'Insira uma senha'
+      setError('Insira uma semha')
+      return
     }
 
     const data = {email, password}
@@ -39,7 +53,8 @@ const Login = () => {
       }
 
       if(json.sucess){
-        
+        Cookies.set('jwtToken', json.token, { expires: 1 });
+        setLogged(true)
       }
      
      
@@ -100,4 +115,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginForm;
