@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import Fetch from '../../helpers/Fetch'
-import { Projects } from '../../utils/data';
+import { Projects } from '../../types/types'; 
 import * as k from './styles'
 import { Link } from 'react-router-dom';
 const Admin: React.FC = () => {
@@ -9,7 +9,6 @@ const Admin: React.FC = () => {
   useEffect( ()=>{
     const fetchData = async ()=>{
     const data = await Fetch.getProjects()
-    console.log(data)
     setProjects(data)
   }
   fetchData()
@@ -34,7 +33,7 @@ const Admin: React.FC = () => {
         <div className='image'>
           <img src={item.img}/>
         </div>
-        <Link to={`/projeto/${item.title}`}>Editar</Link>
+        <Link to={`/projeto/${item.id}`}>Editar</Link>
       </div>
       )}
      </div>

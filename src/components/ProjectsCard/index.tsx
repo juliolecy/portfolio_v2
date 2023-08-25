@@ -9,6 +9,7 @@ import { useEffect } from 'react'
 interface ProjectsCard extends Projects{
   reverse: number;
 }
+
 const ProjectsCard = (props: ProjectsCard) => {
   useEffect(() => {
     AOS.init()

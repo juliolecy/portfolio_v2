@@ -34,10 +34,8 @@ const LoginForm = () => {
 
     const data = {email, password}
 
-    const url = 'https://portfolio-v2-backend-rcw0.onrender.com/api/login'
-
     try {
-      const res = await fetch(url, {
+      const res = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -53,7 +51,7 @@ const LoginForm = () => {
       }
 
       if(json.sucess){
-        Cookies.set('jwtToken', json.token, { expires: 1 });
+        Cookies.set('jwtToken', json.token, { expires: 1, path: '/' });
         setLogged(true)
       }
      

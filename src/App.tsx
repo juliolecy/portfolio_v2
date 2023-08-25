@@ -19,7 +19,7 @@ function App() {
       <Route element={<Home/>} path='/' />
       <Route element={<Login/>} path='/login' />
       <Route element={<Admin/>} path='/admin' />
-      <Route element={<Edit/>} path='/projeto/:title' />
+      <Route element={<Edit/>} path='/projeto/:id' />
     </Routes>
     </ThemeProvider>
    
