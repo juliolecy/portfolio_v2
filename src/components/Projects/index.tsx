@@ -55,6 +55,7 @@ const Projects = () => {
             tech={item.tech}
             deploy={item.deploy}
             git={item.git}
+            id={item.id}
           />
         )
 

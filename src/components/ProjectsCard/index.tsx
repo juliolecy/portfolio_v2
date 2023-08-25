@@ -1,16 +1,18 @@
 import * as k from './styles'
 import { BiLinkExternal } from 'react-icons/bi';
 import { FiGithub } from 'react-icons/fi';
-import { Projects } from '../../utils/data';
+import { Project } from '../../types/types'; 
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect } from 'react'
 
-interface ProjectsCard extends Projects{
+interface ProjectCard extends Project {
+  tech: string[];
   reverse: number;
-}
+  }
 
-const ProjectsCard = (props: ProjectsCard) => {
+
+const ProjectsCard = (props: ProjectCard) => {
   useEffect(() => {
     AOS.init()
   }, [])

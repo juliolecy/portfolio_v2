@@ -1,6 +1,5 @@
-import styled, { keyframes } from 'styled-components';
-
-import { stackAnimation, glitchAnimation, GlitchAnim2, GlitchAnim, GlitchSkew } from '../../styles/keyframes';
+import styled from 'styled-components';
+import {  GlitchAnim2, GlitchAnim, GlitchSkew } from '../../styles/keyframes';
 
 interface StackContainerProps {
   stacks: number;

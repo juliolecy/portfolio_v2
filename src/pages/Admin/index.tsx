@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import Fetch from '../../helpers/Fetch'
-import { Projects } from '../../types/types'; 
+import { Project } from '../../types/types';  
 import * as k from './styles'
 import { Link } from 'react-router-dom';
 const Admin: React.FC = () => {
-  const [projects, setProjects] = useState<Projects[]>([]);
+  const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect( ()=>{
     const fetchData = async ()=>{
