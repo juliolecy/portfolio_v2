@@ -268,3 +268,11 @@ export const Wave = keyframes`
   100% {
     opacity: 0;
   }`
+export const FadeIn = keyframes`
+    from {
+      opacity: 0;
+    }
+    to {
+		opacity: 1;
+	}
+`

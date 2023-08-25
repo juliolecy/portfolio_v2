@@ -68,6 +68,30 @@ export default {
         console.error('Erro ao buscar dados da API:', error);
         return
       }
+    },
+    addProject: async ( formData: FormData)=>{
+      
+      const jwtToken = Cookies.get('jwtToken');
+
+      const options = {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${jwtToken}`
+        },
+        body: formData
+      };
+
+    
+      try {
+        const response = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/project/create`,options);
+        const data = await response.json();
+        console.log(data)
+        return data
+      
+      } catch (error) {
+        console.error('Erro ao buscar dados da API:', error);
+        return
+      }
     }
 
     }
