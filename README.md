@@ -1,27 +1,69 @@
-# React + TypeScript + Vite
+---
+<h1 align="center"> 
+ Portfolio_v2
+</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/juliolecy/portfolio_v2">
+  
+  <a href="https://github.com/fallying/portfolio_v2/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/juliolecy/portfolio_v2">
+  </a>
+    
+   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
+</p>
 
-Currently, two official plugins are available:
+<div  align="center">
+  <a>
+    <img src="https://skillicons.dev/icons?i=react,typescript,styledcomponents" />
+  </a>
+</div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Projeto
+Este é meu portfólio pessoal. Você pode vê-lo <a target='_blank' href='https://jlins.vercel.app/'>
+  aqui
+  </a>.
+## Principais tecnologias
+-  **Typescript**
+-   **React**
+-   **Styled-Components**
+-   **Vite**
 
-## Expanding the ESLint configuration
+> Veja o arquivo  [package.json](https://github.com/juliolecy/portfolio_v2/blob/master/package.json)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
+### Dependências  
+* aos
+* react-scorll
+* react-icons
+* react-switch
 
-- Configure the top-level `parserOptions` property like this:
+### Requisitos
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+* Node
+* NPM
+
+#### 🧭 Iniciando a aplicação
+
+```bash
+
+# Clone este repositório
+$ git clone https://github.com/juliolecy/portfolio_v2.git
+
+# Acesse a pasta do projeto no seu terminal/cmd
+$ cd portfolio_v2
+
+# Instale as dependências
+$ npm i
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm run dev
+
+# Acesse http://localhost:5173/
+
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+---
+
+
+
