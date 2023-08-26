@@ -7,20 +7,25 @@ import { Route, BrowserRouter, Routes } from "react-router-dom";
 import Login from './pages/Login'
 import Admin from './pages/Admin'
 import Edit from './pages/Edit'
+import { AuthProvider } from './context/Auth/AuthProvider'
+import { RequireAuth } from './context/Auth/RequireAuth'
 
 function App() {
   const {theme} = useContext(ThemeContext)
   return (
     <BrowserRouter>
+      
     <ThemeProvider theme={theme}>
     <GlobalStyles/>
+    <AuthProvider>
     <Routes>
 
       <Route element={<Home/>} path='/' />
       <Route element={<Login/>} path='/login' />
-      <Route element={<Admin/>} path='/admin' />
+      <Route element={<RequireAuth><Admin/></RequireAuth>} path='/admin' />
       <Route element={<Edit/>} path='/projeto/:id' />
     </Routes>
+    </AuthProvider>
     </ThemeProvider>
    
     </BrowserRouter>

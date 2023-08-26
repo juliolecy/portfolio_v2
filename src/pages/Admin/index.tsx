@@ -5,9 +5,11 @@ import * as k from './styles'
 import { Link } from 'react-router-dom';
 import { BsFillCloudPlusFill } from 'react-icons/bs';
 import { useSpring } from 'react-spring';
+import Cookies from 'js-cookie';
 
 const Admin: React.FC = () => {
 
+  const jwtToken = Cookies.get('jwtToken');
   const fileField = useRef<HTMLInputElement>(null);
 
   const [projects, setProjects] = useState<Project[]>([]);

@@ -1,10 +1,14 @@
 import * as k from './styles'
-import React, { useEffect, useState } from 'react';
-import { DiGithub } from 'react-icons/di';
-import { TiSocialLinkedinCircular } from 'react-icons/ti';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';  
 import Cookies from 'js-cookie';
+import { AuthContext } from '../../context/Auth/AuthContext';
+import { useApi } from '../../hooks/useApi';
 const LoginForm = () => {
+
+  const api = useApi()
+
+  const auth = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -13,11 +17,11 @@ const LoginForm = () => {
   const [error, setError] = useState('')
   const [logged, setLogged] = useState(false)
 
-  useEffect(()=>{
-    if(logged){
-      navigate('/admin')
-    }
-  },[logged])
+  // useEffect(()=>{
+  //   if(logged){
+  //     navigate('/admin')
+  //   }
+  // },[logged])
  
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) =>{
     e.preventDefault();
@@ -32,35 +36,39 @@ const LoginForm = () => {
       return
     }
 
-    const data = {email, password}
-
-    try {
-      const res = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/login`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      });
-
-      const json = await res.json()
-      console.log(json);
-
-      if(json.error){
-        setError(json.error)
-      }
-
-      if(json.sucess){
-        Cookies.set('jwtToken', json.token, { expires: 1, path: '/' });
-        setLogged(true)
-      }
-     
-     
-    } catch (error) {
-      console.error('Erro ao fazer a requisição', error);
+    const isLogged = await auth.signin(email, password)
+    if(isLogged){
+      navigate('/admin')
+      console.log('islogged loginform', islogged)
     }
 
-    setError('')
+    // try {
+    //   const res = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/login`, {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(data)
+    //   });
+
+    //   const json = await res.json()
+    //   console.log(json);
+
+      // if(json.error){
+      //   setError(json.error)
+      // }
+
+      // if(json.sucess){
+      //   Cookies.set('jwtToken', json.token, { expires: 1, path: '/' });
+      //   setLogged(true)
+      // }
+     
+     
+    // } catch (error) {
+    //   console.error('Erro ao fazer a requisição', error);
+    // }
+
+    // setError('')
   };
 
   
