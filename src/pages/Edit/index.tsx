@@ -15,7 +15,8 @@ const Edit: React.FC = () => {
   const [git, setGit] = useState<string>('')
   const [deploy, setDeploy] = useState<string>('')
   const [img, setImg] = useState<string>('')
-  const [tech, setTech] = useState<string[]>([])
+  const [tech, setTech] = useState<string>('')
+
 
   useEffect( ()=>{
     const fetchData = async ()=>{
@@ -38,18 +39,27 @@ const Edit: React.FC = () => {
 const handleSubmit = async (e: React.FormEvent)=>{
 e.preventDefault()
  if(project){
+
+  const techArray = handleTech(tech)
   project.title=title
   project.desc=desc
   project.git=git
   project.deploy=deploy
   project.img=img
-  project.tech=tech
+  project.tech=techArray
 
   const data = await Fetch.editProject(project)
-  console.log(data)
+  
  }
 
 }
+
+const handleTech = (value:string | string[]) =>{
+  if(typeof(value) === 'string'){
+    return value.split(',')
+  }
+    return value
+  }
 
   return ( 
 <k.Container>
