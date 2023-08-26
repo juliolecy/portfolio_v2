@@ -39,36 +39,8 @@ const LoginForm = () => {
     const isLogged = await auth.signin(email, password)
     if(isLogged){
       navigate('/admin')
-      console.log('islogged loginform', islogged)
     }
 
-    // try {
-    //   const res = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/login`, {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(data)
-    //   });
-
-    //   const json = await res.json()
-    //   console.log(json);
-
-      // if(json.error){
-      //   setError(json.error)
-      // }
-
-      // if(json.sucess){
-      //   Cookies.set('jwtToken', json.token, { expires: 1, path: '/' });
-      //   setLogged(true)
-      // }
-     
-     
-    // } catch (error) {
-    //   console.error('Erro ao fazer a requisição', error);
-    // }
-
-    // setError('')
   };
 
   
