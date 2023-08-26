@@ -17,29 +17,40 @@ align-items: center;
 
 .welcome{
     padding: 1rem;
-    margin: 1rem auto;
+    margin: 4rem auto;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    text-align: center;
+
     span{
         color: #fff;
     }
     span:nth-child(2){
-        color: red;
+      color: #00feff;
     }
 }
 
 h1{
-    color: #fff;
+  font-size: 2rem;  
+  color: #fff;
+    margin: 2rem;
+    text-align: center;
+}
+
+.line{
+  width: 70%;
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, #5d5d5d, #38161600);
+    border-radius: 50%;
     margin-bottom: 2rem;
 }
 
 .projects {
-    display: grid;
+  display: grid;
   grid-template-columns: repeat(3, 1fr); 
   gap: 20px; 
-  margin: 0 auto;
-  padding: 0 1rem;
+  margin: 2rem 1rem;
 
     .projects--card{
         h1{
@@ -57,8 +68,19 @@ h1{
         }
     }
 }
-`
 
+@media (max-width:962px){
+  .projects{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width:632px){
+  .projects{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+`
 export const AddProject = styled.div`
 display:flex;
 align-items: center;

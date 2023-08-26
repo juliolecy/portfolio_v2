@@ -11,6 +11,7 @@ align-items: center;
 color: #fff;
 
 form{
+  margin: 3rem auto;
   background-color: #15172b;
   border-radius: 20px;
   box-sizing: border-box;
@@ -20,7 +21,6 @@ form{
   display:flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem;
 
 .title {
   color: #eee;
@@ -112,7 +112,7 @@ form{
 }
 
 .submit {
-  background-color: #08d;
+  background-color: #00d0ff66;
   border-radius: 12px;
   border: 0;
   box-sizing: border-box;
@@ -124,6 +124,11 @@ form{
   // outline: 0;
   text-align: center;
   width: 100%;
+  transition: .5s ease all;
+
+  &:hover{
+    background-color: #00d0ffe0;
+  }
 }
 
 .submit:active {
@@ -131,9 +136,10 @@ form{
 }
 
 .image-container{
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     img{
+      border-radius: 20px;
         width: 100%;
     }
 }

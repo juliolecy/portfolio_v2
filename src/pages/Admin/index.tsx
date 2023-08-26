@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { BsFillCloudPlusFill } from 'react-icons/bs';
 import { useSpring } from 'react-spring';
 import Cookies from 'js-cookie';
+import ProjectsCardAdmin from '../../components/ProjectsCardAdmin';
 
 const Admin: React.FC = () => {
 
@@ -87,8 +88,10 @@ const handleSubmit = async (e: React.FormEvent)=>{
 </div>
       </k.AddProject>
 
-      <h1>Estes são os seus projetos</h1>
+      <h1>Seus projetos</h1>
 
+      <div className="line"></div>
+{/* 
      <div className="projects">
       {projects.map((item, index)=>
       <div 
@@ -101,7 +104,24 @@ const handleSubmit = async (e: React.FormEvent)=>{
         <Link to={`/projeto/${item.id}`}>Editar</Link>
       </div>
       )}
+     </div> */}
+
+     <div className='projects'>
+      {projects.map((item, index)=>
+      <ProjectsCardAdmin
+        key={index}
+        title={item.title}
+        img={item.img}
+        desc={item.desc}
+        deploy={item.deploy}
+        tech={item.tech}
+        git={item.git}
+        id={item.id}
+        />
+)}
      </div>
+
+     
     </k.Container>
  
     {modal && (

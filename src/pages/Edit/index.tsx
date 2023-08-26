@@ -15,7 +15,7 @@ const Edit: React.FC = () => {
   const [git, setGit] = useState<string>('')
   const [deploy, setDeploy] = useState<string>('')
   const [img, setImg] = useState<string>('')
-  const [tech, setTech] = useState<string | string[]>('')
+  const [tech, setTech] = useState<string[]>([])
 
   useEffect( ()=>{
     const fetchData = async ()=>{
@@ -58,8 +58,8 @@ e.preventDefault()
 {project &&
        <>
            <form onSubmit={handleSubmit}>
-      <div className="title">Olá, Julio</div>
-      <div className="subtitle">Seja bem vindo</div>
+      <div className="title">Edição</div>
+      <div className="subtitle">Edite seu projeto</div>
 
       <div className="input-container ic1">
         <input 

@@ -4,7 +4,7 @@ export interface Project {
   git: string;
   id: number;
   img: string;
-  tech: string | string[];
+  tech: string[];
   title: string;
 }
 
