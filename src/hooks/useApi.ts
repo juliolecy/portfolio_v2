@@ -22,6 +22,7 @@ export const useApi = () => ({
         console.error('Erro ao fazer a requisição', error);
       }
     },
+
     signin: async(email:string, password: string)=>{
         try {
             const res = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/login`, {
@@ -36,7 +37,6 @@ export const useApi = () => ({
             Cookies.set('jwtToken', json.token, { expires: 1, path: '/' });
           }
             
-          console.log('useApi signin', json);
           return json
         } catch (error) {
             console.error('Erro ao fazer a requisição', error);

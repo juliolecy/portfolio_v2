@@ -6,7 +6,6 @@ import { GrDeploy } from 'react-icons/gr'
 
 
 const ProjectsCardAdmin = (props: Project) => {
-    console.log(props.tech)
     return (
 <k.ProjectsContainer>
     <ul>

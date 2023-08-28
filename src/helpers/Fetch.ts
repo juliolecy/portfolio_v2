@@ -1,8 +1,6 @@
 import { Project } from "../types/types"; 
 import Cookies from 'js-cookie';
 
-
-
 export default {
     getProjects: async () => {
         try {
@@ -48,7 +46,6 @@ export default {
         id, title, git, deploy, desc, tech
       }
 
-      console.log("BodyObject", bodyObject)
 
       const options = {
         method: 'POST',
@@ -85,7 +82,6 @@ export default {
       try {
         const response = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/project/create`,options);
         const data = await response.json();
-        console.log(data)
         return data
       
       } catch (error) {

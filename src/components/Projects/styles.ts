@@ -52,6 +52,7 @@ background-color: ${props=> props.theme.colors.primary};
     color: ${props=> props.theme.colors.text};
     font-weight: 200;
     font-size: 2rem;
+    text-align: center;
   }
 }
 

@@ -8,36 +8,7 @@ export const scroll = keyframes`
     transform: translateX(calc(-250px * 9))
 }
 `
-// export const stackAnimation = keyframes`
-// 0% {
-//     opacity: 0;
-//     transform: translateX(-50%);
-//     text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
-//   };
-//   60% {
-//     opacity: 0.5;
-//     transform: translateX(50%);
-//   }
-//   80% {
-//     transform: none;
-//     opacity: 1;
-//     text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
-//   }
-//   100% {
-//     text-shadow: none;
-//   }
 
-// `
-/* export const glitchAnimation = keyframes`
- 0% {
-    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
-    transform: translate(var(--glitch-translate));
-  }
-  2% {
-    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
-  }
-  4%, 100% {  text-shadow: none; transform: none; }
-`; */
 export const Morph = keyframes`
    0%, 5%, 100%{
         filter: blur(0px);
@@ -275,4 +246,17 @@ export const FadeIn = keyframes`
     to {
 		opacity: 1;
 	}
+`
+
+export const ScaleDot = keyframes`
+  40% {
+    transform: scale(1.3) translate(-2px, -2px);
+  }
+  80% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+
 `

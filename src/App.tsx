@@ -9,6 +9,8 @@ import Admin from './pages/Admin'
 import Edit from './pages/Edit'
 import { AuthProvider } from './context/Auth/AuthProvider'
 import { RequireAuth } from './context/Auth/RequireAuth'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
   const {theme} = useContext(ThemeContext)
@@ -17,6 +19,7 @@ function App() {
       
     <ThemeProvider theme={theme}>
     <GlobalStyles/>
+    <ToastContainer/>
     <AuthProvider>
     <Routes>
 

@@ -182,6 +182,20 @@ export const ModalContent = styled(animated.div)`
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 
+  .close{
+        position: absolute;
+    color: #ff0000ad;
+    top: 15px;
+    right: 27px;
+    font-size: 5rem;
+    cursor: pointer;
+    transition: .5s ease all;
+    
+    &:hover{
+      color: #ff0000;
+
+    }
+  }
 
 
 form{

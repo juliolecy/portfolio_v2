@@ -2,11 +2,12 @@ import { useEffect, useRef, useState } from 'react'
 import Fetch from '../../helpers/Fetch'
 import { Project } from '../../types/types';  
 import * as k from './styles'
-import { Link } from 'react-router-dom';
 import { BsFillCloudPlusFill } from 'react-icons/bs';
+import { IoIosClose } from 'react-icons/io';
 import { useSpring } from 'react-spring';
 import Cookies from 'js-cookie';
 import ProjectsCardAdmin from '../../components/ProjectsCardAdmin';
+import { Notify } from '../../helpers/Notify';
 
 const Admin: React.FC = () => {
 
@@ -51,6 +52,31 @@ const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 const handleSubmit = async (e: React.FormEvent)=>{
   e.preventDefault()
   const formData = new FormData();
+  if(!title){
+    Notify("Insira um título.")
+    return
+  }
+  if(!desc){
+    Notify("Insira uma descrição.")
+    return
+  }
+  if(!img){
+    Notify("Insira uma imagem.")
+
+  }
+  if(!git){
+    Notify("Insira um repositório.")
+    return
+  }
+  if(!deploy){
+    Notify("Insira um endereço.")
+    return
+  }
+  if(!tech){
+    Notify("Insira as tecnologias.")
+    return
+  }
+  
   if (title && desc && img && desc && git && deploy && tech) {
     formData.append('title', title)
     formData.append('desc', desc)
@@ -67,7 +93,6 @@ const handleSubmit = async (e: React.FormEvent)=>{
   return (
     <>
     <k.Container>
-
       <div className="welcome">
         <span>Olá, Julio Cesar</span>
         <span>Seja bem vindo</span>
@@ -126,7 +151,13 @@ const handleSubmit = async (e: React.FormEvent)=>{
  
     {modal && (
       <k.ModalContainer >
+        
         <k.ModalContent style={modalAnimation}>
+          <div 
+          className="close"
+          onClick={handleModal}>
+      <IoIosClose/>
+     </div>
           <form onSubmit={handleSubmit}>
             <span>Adicione um novo projeto</span>
      

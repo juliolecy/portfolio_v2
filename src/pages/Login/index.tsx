@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { AuthContext } from '../../context/Auth/AuthContext';
 import { useApi } from '../../hooks/useApi';
+import Loading from '../../components/Loading2';
+import { toast } from 'react-toastify';
+import { Notify } from '../../helpers/Notify';
 
 
 const Login: React.FC = () => {
@@ -16,42 +19,44 @@ const navigate = useNavigate();
 
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
-const [error, setError] = useState('')
-const [logged, setLogged] = useState(false)
+const [loading, setLoading] = useState(false)
 
-    
-    
-      // useEffect(()=>{
-      //   if(logged){
-      //     navigate('/admin')
-      //   }
-      // },[logged])
-     
       const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) =>{
         e.preventDefault();
     
         if(email === ''){
-          setError('Insira um email')
+          Notify('Insira um email')
           return 
         }
         
         if(password === ''){
-          setError('Insira uma semha')
+          Notify('Insira uma semha')
           return
         }
-    
+
+        setLoading(true)
         const isLogged = await auth.signin(email, password)
         if(isLogged){
+          setLoading(false)
           navigate('/admin')
+        } else {
+          setLoading(false)
+          Notify('Email e/ou senha inválidos.')
         }
     
       };
     
       
       return (
-    <k.Container>
-      {error && 
-      <span>{error}</span>}
+
+      <>
+      {loading &&
+      <Loading/>
+      }
+
+      {!loading &&
+      <k.Container>
+     
     <form className='form' onSubmit={handleSubmit}>
       {/* //Email Row */}
       <div className="row">
@@ -93,6 +98,8 @@ const [logged, setLogged] = useState(false)
     </form>
      
             </k.Container>
+            }
+            </>
 
  
   )
