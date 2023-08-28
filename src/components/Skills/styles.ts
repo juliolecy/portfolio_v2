@@ -47,6 +47,7 @@ h2{
     font-weight: 200;
     font-size: 2rem;
     margin-bottom:2rem ;
+    text-align: center;
   }
 
 .glitch{
