@@ -11,6 +11,7 @@ align-items: center;
 color: #fff;
 
 form{
+  position: relative;
   margin: 3rem auto;
   background-color: #15172b;
   border-radius: 20px;
@@ -21,6 +22,17 @@ form{
   display:flex;
   flex-direction: column;
   align-items: center;
+  .back{
+  position: absolute;
+    top: 1rem;
+    left: 2rem;
+    font-size: 4rem;
+    cursor: pointer;
+    color: #ffffff96;
+    &:hover{
+      color: #fff;
+    }
+}
 
 .title {
   color: #eee;

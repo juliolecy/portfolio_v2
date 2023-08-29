@@ -160,7 +160,6 @@ const handleSubmit = async (e: React.FormEvent)=>{
      </div>
           <form onSubmit={handleSubmit}>
             <span>Adicione um novo projeto</span>
-     
 
       <div className="input-container ic1">
         <input 
@@ -176,7 +175,6 @@ const handleSubmit = async (e: React.FormEvent)=>{
       </div>
 
       <div className="input-container ic1">
-      
         <input
         id="image" 
         className="input" 

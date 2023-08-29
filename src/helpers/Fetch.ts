@@ -38,27 +38,28 @@ export default {
         return
       }
     },
-    editProject: async ({id, title, git, deploy, desc, tech}:Project)=>{
+    editProject: async (formData: FormData)=>{
 
       const jwtToken = Cookies.get('jwtToken');
 
-        const bodyObject = { 
-        id, title, git, deploy, desc, tech
-      }
+      //   const bodyObject = { 
+      //   id, title, git, deploy, desc, tech
+      // }
 
 
       const options = {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
           'Authorization': `Bearer ${jwtToken}`
         },
-        body: new Blob([JSON.stringify(bodyObject)], { type: 'application/json' })
+        // body: new Blob([JSON.stringify(bodyObject)], { type: 'application/json' })
+        body: formData
       };
 
       try {
         const response = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/project/edit`,options);
         const data = await response.json();
+        console.log(data)
         return data
       
       } catch (error) {
