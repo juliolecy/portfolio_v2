@@ -1,11 +1,11 @@
 import * as k from './styles'
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { DiGithub } from 'react-icons/di';
 import { TiSocialLinkedinCircular } from 'react-icons/ti';
 import handleScrollListener from '../../helpers/ScrollListener';
 import Toggle from '../Toggle';
-import {  Link as ScrollLink, animateScroll, scroller } from 'react-scroll'
+import {  Link as ScrollLink } from 'react-scroll'
 import { Link } from 'react-router-dom';
 
 
@@ -19,23 +19,9 @@ const Sidebar = () => {
   };
 
   useEffect(() => {
-    handleScrollListener(20, setScrolled)
+    handleScrollListener(setScrolled)
   }, []);
 
-  const handleScroll = (name:string) =>{
-    scroller.scrollTo(name, {
-      duration: 1500,
-      delay: 100,
-      smooth: true,
-      containerId: 'ContainerElementID',
-      offset: 50
-    })
-  }
-
-  const handleScrollTo = (position:number) =>{
-    animateScroll.scrollTo(position);
-    setIsOpen(!isOpen);
-  }
 
   return (
     <>
@@ -57,7 +43,7 @@ const Sidebar = () => {
         <k.Content>
           <ul>
           <li>
-          <ScrollLink to='start' 
+          <ScrollLink to='start'
           spy={true}
           smooth={true}
           duration={500}
@@ -68,7 +54,7 @@ const Sidebar = () => {
           </ScrollLink>
           </li>
           <li>
-          <ScrollLink to='projects' 
+          <ScrollLink to='projects'
           spy={true}
           smooth={true}
           duration={500}
@@ -79,7 +65,7 @@ const Sidebar = () => {
           </ScrollLink>
          </li>
          <li>
-          <ScrollLink to='skills' 
+          <ScrollLink to='skills'
           spy={true}
           smooth={true}
           duration={500}

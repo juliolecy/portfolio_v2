@@ -1,7 +1,7 @@
-import { FormEventHandler, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Fetch from '../../helpers/Fetch'
 import * as k from './styles'
-import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import {  useNavigate, useParams } from 'react-router-dom';
 import { Project } from '../../types/types';
 import Loading from '../../components/Loading2';
 import { BiArrowToLeft } from 'react-icons/bi';
@@ -17,9 +17,6 @@ const Edit: React.FC = () => {
   const [desc, setDesc] = useState<string>('')
   const [git, setGit] = useState<string>('')
   const [deploy, setDeploy] = useState<string>('')
-
-  // const [img, setImg] = useState<File | null>(null)
-
   const [tech, setTech] = useState<string>('')
 
 
@@ -37,8 +34,6 @@ const Edit: React.FC = () => {
     }
     fetchData()
   }, [])
-
-
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -72,33 +67,10 @@ const Edit: React.FC = () => {
       formData.append('tech', tech)
       formData.append('id', id!)
       setLoading(true)
-      const data = await Fetch.editProject(formData);
+      await Fetch.editProject(formData);
       navigate('/admin')
     }
-
-    // if (project) {
-    //   const techArray = handleTech(tech)
-    //   project.title = title
-    //   project.desc = desc
-    //   project.git = git
-    //   project.deploy = deploy
-    //   project.tech = techArray
-    //   const data = await Fetch.editProject(project)
-    // }
   }
-
-  const handleTech = (value: string | string[]) => {
-    if (typeof (value) === 'string') {
-      return value.split(',')
-    }
-    return value
-  }
-
-  // const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const imageFile = e.target.files?.[0];
-  //     setImg(imageFile || null)
-    
-  // };
 
   return (
     <k.Container>
@@ -129,19 +101,6 @@ const Edit: React.FC = () => {
             <div className="image-container">
               <img src={project.img} alt="" />
             </div>
-
-            {/* <div className="input-container ic1">
-        <input
-        id="image" 
-        className="input" 
-        type="file"
-        required
-        accept="image/*"
-        onChange={handleImageChange}/>
-        
-        <div className="cut"></div>
-        <label htmlFor="image" className="placeholder">Imagem</label>
-      </div> */}
 
             <div className="input-container ic2">
               <input

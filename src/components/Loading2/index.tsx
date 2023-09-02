@@ -1,5 +1,4 @@
 import * as k from './styles'
-import React, { useEffect, useState } from 'react';
 
 const Loading = () => {
   return (

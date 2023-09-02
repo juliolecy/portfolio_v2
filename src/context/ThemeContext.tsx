@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import React, { createContext, useState} from 'react';
 import light from '../styles/themes/light';
 import dark from '../styles/themes/dark';
 
@@ -7,7 +7,7 @@ import dark from '../styles/themes/dark';
   }
 
   interface ThemeContextData {
-    theme: any; 
+    theme: any;
     toggleTheme():void;
   }
 
@@ -28,4 +28,3 @@ return (
     </ThemeContext.Provider>
   )
 }
-

@@ -1,18 +1,14 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Fetch from '../../helpers/Fetch'
-import { Project } from '../../types/types';  
+import { Project } from '../../types/types';
 import * as k from './styles'
 import { BsFillCloudPlusFill } from 'react-icons/bs';
 import { IoIosClose } from 'react-icons/io';
 import { useSpring } from 'react-spring';
-import Cookies from 'js-cookie';
 import ProjectsCardAdmin from '../../components/ProjectsCardAdmin';
 import { Notify } from '../../helpers/Notify';
 
 const Admin: React.FC = () => {
-
-  const jwtToken = Cookies.get('jwtToken');
-  const fileField = useRef<HTMLInputElement>(null);
 
   const [projects, setProjects] = useState<Project[]>([]);
   const [modal, setModal] = useState(false)
@@ -22,8 +18,6 @@ const Admin: React.FC = () => {
   const [deploy, setDeploy] = useState('')
   const [git, setGit] = useState('')
   const [img, setImg] = useState<File | null>(null)
-
-
 
   useEffect( ()=>{
     const fetchData = async ()=>{
@@ -45,7 +39,7 @@ const handleModal = () => {
 const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
   const imageFile = e.target.files?.[0];
     setImg(imageFile || null)
-  
+
 };
 
 
@@ -76,7 +70,7 @@ const handleSubmit = async (e: React.FormEvent)=>{
     Notify("Insira as tecnologias.")
     return
   }
-  
+
   if (title && desc && img && desc && git && deploy && tech) {
     formData.append('title', title)
     formData.append('desc', desc)
@@ -84,7 +78,7 @@ const handleSubmit = async (e: React.FormEvent)=>{
     formData.append('deploy', deploy)
     formData.append('tech', tech)
     formData.append('img', img);
-    const data = await Fetch.addProject(formData);
+    await Fetch.addProject(formData);
   }
 
 }
@@ -99,7 +93,7 @@ const handleSubmit = async (e: React.FormEvent)=>{
       </div>
 
       <k.AddProject>
-     
+
 
 <div className="frame">
   <div className="lines"></div>
@@ -116,20 +110,7 @@ const handleSubmit = async (e: React.FormEvent)=>{
       <h1>Seus projetos</h1>
 
       <div className="line"></div>
-{/* 
-     <div className="projects">
-      {projects.map((item, index)=>
-      <div 
-      className='projects--card'
-      key={index}>
-        <h1>{item.title}</h1>
-        <div className='image'>
-          <img src={item.img}/>
-        </div>
-        <Link to={`/projeto/${item.id}`}>Editar</Link>
-      </div>
-      )}
-     </div> */}
+
 
      <div className='projects'>
       {projects.map((item, index)=>
@@ -146,14 +127,14 @@ const handleSubmit = async (e: React.FormEvent)=>{
 )}
      </div>
 
-     
+
     </k.Container>
- 
+
     {modal && (
       <k.ModalContainer >
-        
+
         <k.ModalContent style={modalAnimation}>
-          <div 
+          <div
           className="close"
           onClick={handleModal}>
       <IoIosClose/>
@@ -162,12 +143,12 @@ const handleSubmit = async (e: React.FormEvent)=>{
             <span>Adicione um novo projeto</span>
 
       <div className="input-container ic1">
-        <input 
-        id="title" 
-        className="input" 
-        type="text" 
-        placeholder=" " 
-        value={title} 
+        <input
+        id="title"
+        className="input"
+        type="text"
+        placeholder=" "
+        value={title}
         onChange={(e)=>setTitle(e.target.value)}
         />
         <div className="cut"></div>
@@ -176,25 +157,25 @@ const handleSubmit = async (e: React.FormEvent)=>{
 
       <div className="input-container ic1">
         <input
-        id="image" 
-        className="input" 
+        id="image"
+        className="input"
         type="file"
         required
         accept="image/*"
         onChange={handleImageChange}/>
-        
+
         <div className="cut"></div>
         <label htmlFor="image" className="placeholder">Imagem</label>
       </div>
 
 
       <div className="input-container ic2">
-        <input 
-        id="desc" 
-        className="input" 
-        type="text" 
-        placeholder=" " 
-        value={desc} 
+        <input
+        id="desc"
+        className="input"
+        type="text"
+        placeholder=" "
+        value={desc}
         onChange={(e)=>setDesc(e.target.value)}
         />
         <div className="cut"></div>
@@ -202,9 +183,9 @@ const handleSubmit = async (e: React.FormEvent)=>{
       </div>
 
       <div className="input-container ic2">
-        <input id="git" 
-        className="input" type="text" placeholder=" " 
-        value={git} 
+        <input id="git"
+        className="input" type="text" placeholder=" "
+        value={git}
          onChange={(e)=>setGit(e.target.value)}
          />
         <div className="cut"></div>
@@ -212,32 +193,32 @@ const handleSubmit = async (e: React.FormEvent)=>{
       </div>
 
       <div className="input-container ic2">
-        <input 
-        id="deploy" 
-        className="input" 
-        type="text" placeholder=" " 
-        value={deploy} 
+        <input
+        id="deploy"
+        className="input"
+        type="text" placeholder=" "
+        value={deploy}
          onChange={(e)=>setDeploy(e.target.value)}/>
         <div className="cut"></div>
         <label htmlFor="deploy" className="placeholder">Deploy</label>
       </div>
 
       <div className="input-container ic2">
-        <input 
-        id="lastname" 
-        className="input" 
-        type="text" 
-        placeholder=" " 
-        value={tech} 
+        <input
+        id="lastname"
+        className="input"
+        type="text"
+        placeholder=" "
+        value={tech}
          onChange={(e)=>setTech(e.target.value)}/>
         <div className="cut"></div>
         <label htmlFor="lastname" className="placeholder">Tecnologias</label>
       </div>
 
-      <button 
+      <button
       className="submit">Terminei</button>
     </form>
-     
+
         </k.ModalContent>
       </k.ModalContainer>
     )}

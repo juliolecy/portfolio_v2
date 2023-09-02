@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import backgroundPNG from '../../assets/hello-world.webp'
 
 
 export const ProjectContainer = styled.div`

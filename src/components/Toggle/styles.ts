@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import backgroundPNG from '../../assets/backgroundPNG.png'
 
 
-export const Container = styled.div`  
+export const Container = styled.div`
 display: flex;
 align-items: center;
 color: ${props => props.theme.colors.text};

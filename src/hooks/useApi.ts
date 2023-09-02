@@ -1,6 +1,18 @@
 import Cookies from 'js-cookie';
 
 export const useApi = () => ({
+  getCertificates: async()=>{
+    try {
+      const res = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/certificates`)
+      const data = await res.json()
+          if(data){
+            console.log(data)
+            return data.certificates;
+          }
+        } catch (error) {
+      console.error('Erro ao fazer a requisição', error);
+    }
+  },
     validadeToken: async()=>{
       const jwtToken = Cookies.get('jwtToken');
       const bodyObject = {
@@ -12,7 +24,7 @@ export const useApi = () => ({
           method: 'POST',
             body:  new Blob([JSON.stringify(bodyObject)], { type: 'application/json' })
           })
-            
+
             const data = await res.json()
 
             if(data && data.user){
@@ -36,13 +48,13 @@ export const useApi = () => ({
           if(json.sucess){
             Cookies.set('jwtToken', json.token, { expires: 1, path: '/' });
           }
-            
+
           return json
         } catch (error) {
             console.error('Erro ao fazer a requisição', error);
           }
-      
-        
+
+
     },
     logout: async()=>{
 

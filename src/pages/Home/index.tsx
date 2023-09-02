@@ -4,10 +4,9 @@ import ScrollUp from '../../components/ScrollUp';
 import Skills from '../../components/Skills';
 import Projects from '../../components/Projects';
 import Footer from "../../components/Footer";
-import { toast } from "react-toastify";
 import { useEffect } from "react";
-import 'react-toastify/dist/ReactToastify.css'
 import { Notify } from "../../helpers/Notify";
+import Certificates from "../../components/Certificates";
 
 
 const Home: React.FC = () => {
@@ -21,6 +20,7 @@ Notify('Lembre-se de desativar o adblock')
       <Hero />
       <Projects />
       <Skills />
+      <Certificates/>
       <Footer/>
       <ScrollUp />
     </>

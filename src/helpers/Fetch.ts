@@ -1,14 +1,13 @@
-import { Project } from "../types/types"; 
 import Cookies from 'js-cookie';
 
 export default {
     getProjects: async () => {
         try {
           const response = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/projects`)
-          
+
           const data = await response.json();
           return data.projects
-        
+
         } catch (error) {
           console.error('Erro ao buscar dados da API:', error);
         }
@@ -16,7 +15,7 @@ export default {
 
     getProject:async (id:string) => {
       let newId = parseInt(id)
-      const bodyObject = { 
+      const bodyObject = {
         id: newId
       }
 
@@ -32,7 +31,7 @@ export default {
         const response = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/project`,options);
         const data = await response.json();
         return data.project
-      
+
       } catch (error) {
         console.error('Erro ao buscar dados da API:', error);
         return
@@ -42,7 +41,7 @@ export default {
 
       const jwtToken = Cookies.get('jwtToken');
 
-      //   const bodyObject = { 
+      //   const bodyObject = {
       //   id, title, git, deploy, desc, tech
       // }
 
@@ -61,14 +60,14 @@ export default {
         const data = await response.json();
         console.log(data)
         return data
-      
+
       } catch (error) {
         console.error('Erro ao buscar dados da API:', error);
         return
       }
     },
     addProject: async ( formData: FormData)=>{
-      
+
       const jwtToken = Cookies.get('jwtToken');
 
       const options = {
@@ -79,12 +78,12 @@ export default {
         body: formData
       };
 
-    
+
       try {
         const response = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/project/create`,options);
         const data = await response.json();
         return data
-      
+
       } catch (error) {
         console.error('Erro ao buscar dados da API:', error);
         return

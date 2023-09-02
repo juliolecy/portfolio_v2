@@ -1,14 +1,6 @@
 import styled from 'styled-components';
 import {  GlitchAnim2, GlitchAnim, GlitchSkew } from '../../styles/keyframes';
 
-interface StackContainerProps {
-  stacks: number;
-}
-
-interface StackSpanProps extends StackContainerProps {
-  index: number;
-}
-
 export const Container = styled.div`
 text-align: center;
 gap: 1rem;
@@ -63,7 +55,7 @@ gap: 1rem;
  }
  }
 
- @media screen and (max-width:460px){ 
+ @media screen and (max-width:460px){
     .text{
    .glitch {
    font-size: 2rem;
@@ -81,5 +73,3 @@ gap: 1rem;
    }
  }
  }`
-
-

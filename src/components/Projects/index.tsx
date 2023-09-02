@@ -1,8 +1,6 @@
 import * as k from './styles'
 import GlitchText from '../GlitchText';
 import ProjectsCard from '../ProjectsCard';
-import AOS from 'aos';
-import 'aos/dist/aos.css'
 import { useEffect, useState } from 'react'
 import Loading from '../Loading';
 import Fetch from '../../helpers/Fetch'
@@ -23,7 +21,6 @@ const Projects = () => {
     useEffect( ()=>{
         const fetchData = async ()=>{
         const data = await Fetch.getProjects()
-        console.log(data)
         setProjects(data)
       }
       fetchData()
@@ -31,7 +28,7 @@ const Projects = () => {
 
   return (
 
-    <k.Container className='projects'> 
+    <k.Container className='projects'>
       <div className="shadow"></div>
 
       <div  className='principal'>

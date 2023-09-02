@@ -1,6 +1,6 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import HomeBackground from '../../assets/backgroundHome.jpg'
-import { Arrow, Morph } from '../../styles/keyframes'
+import { Arrow } from '../../styles/keyframes'
 
 export const Container = styled.div`
 position: relative;
@@ -17,11 +17,11 @@ flex-direction: column;
 &::before {
     content: "";
     position: absolute;
-    top: 0; 
+    top: 0;
     left: 0;
-    width: 100%; 
-    height: 100vh;  
-    opacity: 1; 
+    width: 100%;
+    height: 100vh;
+    opacity: 1;
     z-index: -1;
     background-position: center;
     background-size: cover;
@@ -50,9 +50,9 @@ span{
 .arrows path {
 	stroke: #4ebfff;
 	fill: transparent;
-	stroke-width: 1px;	
+	stroke-width: 1px;
 	animation: ${Arrow} 2s infinite;
-	-webkit-animation: ${Arrow} 2s infinite; 
+	-webkit-animation: ${Arrow} 2s infinite;
 }
 
 
@@ -66,7 +66,7 @@ span{
 	-webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
 }
 
-.arrows path.a3 {	
+.arrows path.a3 {
 	animation-delay:0s;
 	-webkit-animation-delay:0s; /* Safari 和 Chrome */
 }

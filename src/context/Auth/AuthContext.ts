@@ -2,4 +2,4 @@ import { createContext } from "react";
 import { AuthContextType } from "../../types/types";
 
 
-export const AuthContext = createContext<AuthContextType>(null!)
+export const AuthContext = createContext<AuthContextType>(null!) 

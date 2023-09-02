@@ -1,6 +1,5 @@
-import { SetStateAction } from "react";
 
-export default function handleScrollListener (margin: number, setSome:React.Dispatch<React.SetStateAction<boolean>>){
+export default function handleScrollListener (setSome:React.Dispatch<React.SetStateAction<boolean>>){
 
     const scrollListener=()=>{
       if(window.scrollY > 420){
@@ -15,4 +14,3 @@ export default function handleScrollListener (margin: number, setSome:React.Disp
       window.removeEventListener('scroll', scrollListener);
     }
 }
-

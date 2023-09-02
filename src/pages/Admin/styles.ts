@@ -1,10 +1,5 @@
 import styled from 'styled-components';
-import { FadeIn } from '../../styles/keyframes';
 import { animated } from 'react-spring';
-
-interface Modal{
-    modal: boolean;
-}
 
 export const Container = styled.div`
 width: 100%;
@@ -32,7 +27,7 @@ align-items: center;
 }
 
 h1{
-  font-size: 2rem;  
+  font-size: 2rem;
   color: #fff;
     margin: 2rem;
     text-align: center;
@@ -48,8 +43,8 @@ h1{
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 20px; 
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   margin: 2rem 1rem;
 
     .projects--card{
@@ -190,7 +185,7 @@ export const ModalContent = styled(animated.div)`
     font-size: 5rem;
     cursor: pointer;
     transition: .5s ease all;
-    
+
     &:hover{
       color: #ff0000;
 
@@ -233,7 +228,7 @@ form{
 }
 
 .ic1 {
-  margin: 1rem 0; 
+  margin: 1rem 0;
 }
 
 .ic2 {
@@ -250,7 +245,7 @@ form{
     height: 100%;
     background: #303245;
     border-radius: 15px;
-    
+
 }
 
 .input {

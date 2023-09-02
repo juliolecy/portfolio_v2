@@ -1,4 +1,3 @@
-import skills from '../../utils/skills';
 import Accordion from '../Accordion';
 import GlitchText from '../GlitchText';
 import Slider from '../Slider';
@@ -6,7 +5,7 @@ import * as k from './styles'
 
 const Skills = () => {
   return (
-  
+
   <k.Container name="skills" className='skills' id='skills'>
 
     <GlitchText text='Habilidades'/>
@@ -16,9 +15,9 @@ const Skills = () => {
     <Accordion/>
 
     <Slider/>
-    
+
   </k.Container>
-    
+
   );
 };
 

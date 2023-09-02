@@ -1,6 +1,4 @@
-import styled, { keyframes } from 'styled-components'
-import HomeBackground from '../../assets/backgroundHome.jpg'
-import { Morph } from '../../styles/keyframes'
+import styled from 'styled-components'
 import { scroll } from '../../styles/keyframes'
 
 export const SliderContainer = styled.div`
@@ -17,7 +15,7 @@ margin: 4rem 0;
  place-items: center;
  overflow: hidden;
 
- 
+
  &:before, &:after{
     background: linear-gradient(to right, rgb(0,0,0) 0%, rgba(255,255,255,0) 100%);
     display: ${props => props.theme.title === 'dark'? 'flex' : 'none'};
@@ -40,7 +38,7 @@ margin: 4rem 0;
  .slide-track{
      display: flex;
      width: calc(150px * 28);
-     animation: ${scroll} 40s linear infinite; 
+     animation: ${scroll} 40s linear infinite;
  }
  .slide{
      height: 150px;
@@ -51,10 +49,10 @@ margin: 4rem 0;
     perspective: 100px;
     filter: grayscale(1);
     transition: transform 1s;
-    
+
     &:hover{
         filter: grayscale(0);
-        
+
     }
      img{
          width: 100%;

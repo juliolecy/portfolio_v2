@@ -1,9 +1,8 @@
 import * as k from './styles'
-import React, { useEffect, useState } from 'react';
 import {GoDot, GoDotFill} from 'react-icons/go'
 const Accordion = () => {
   return (
-  
+
       <k.Container>
 
       <div className="accordion">
@@ -64,7 +63,7 @@ const Accordion = () => {
      </div>
 
         </k.Container>
-    
+
   );
 };
 

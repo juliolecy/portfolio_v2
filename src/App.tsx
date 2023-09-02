@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react'
+import {  useContext} from 'react'
 import Home from './pages/Home'
 import { GlobalStyles } from './styles/global'
 import { ThemeProvider } from 'styled-components'
@@ -16,7 +16,7 @@ function App() {
   const {theme} = useContext(ThemeContext)
   return (
     <BrowserRouter>
-      
+
     <ThemeProvider theme={theme}>
     <GlobalStyles/>
     <ToastContainer/>
@@ -30,7 +30,7 @@ function App() {
     </Routes>
     </AuthProvider>
     </ThemeProvider>
-   
+
     </BrowserRouter>
   )
 }
