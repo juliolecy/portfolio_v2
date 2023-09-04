@@ -21,11 +21,11 @@
     "noFallthroughCasesInSwitch": true,
     "removeComments": true,
     "noEmitOnError": true,
-    
-    
+
+
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "files": ["src/styles/styled.d.ts"],
-  
+
 }

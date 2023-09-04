@@ -1,10 +1,8 @@
-import * as k from './styles'
-import {GoDot, GoDotFill} from 'react-icons/go'
+import * as k from './styles';
+import { GoDot, GoDotFill } from 'react-icons/go';
 const Accordion = () => {
   return (
-
-      <k.Container>
-
+    <k.Container>
       <div className="accordion">
         <k.AccordionItem id="question1">
           <a className="accordion-link" href="#question1">
@@ -16,14 +14,18 @@ const Accordion = () => {
                 <li>#Javascript</li>
               </ul>
             </div>
-            <i className="icon ion-md-arrow-forward"><GoDot/></i>
-            <i className="icon ion-md-arrow-down"><GoDotFill/></i>
+            <i className="icon ion-md-arrow-forward">
+              <GoDot />
+            </i>
+            <i className="icon ion-md-arrow-down">
+              <GoDotFill />
+            </i>
           </a>
           <div className="answer">
             <p> HTML CSS JAVASCRIPT REACT NEXTJS</p>
           </div>
-          <hr/>
-      </k.AccordionItem>
+          <hr />
+        </k.AccordionItem>
         <k.AccordionItem id="question2">
           <a className="accordion-link" href="#question2">
             <div className="flex">
@@ -34,14 +36,18 @@ const Accordion = () => {
                 <li>#Javascript</li>
               </ul>
             </div>
-            <i className="icon ion-md-arrow-forward"><GoDot/></i>
-            <i className="icon ion-md-arrow-down"><GoDotFill/></i>
+            <i className="icon ion-md-arrow-forward">
+              <GoDot />
+            </i>
+            <i className="icon ion-md-arrow-down">
+              <GoDotFill />
+            </i>
           </a>
           <div className="answer">
             <p>JAVASCRIPT NODE EXPRESS SEQUELIZE</p>
           </div>
-          <hr/>
-      </k.AccordionItem>
+          <hr />
+        </k.AccordionItem>
         <k.AccordionItem id="question3">
           <a className="accordion-link" href="#question3">
             <div className="flex">
@@ -51,19 +57,20 @@ const Accordion = () => {
                 <li>#SQL</li>
               </ul>
             </div>
-            <i className="icon ion-md-arrow-forward"><GoDot/></i>
-            <i className="icon ion-md-arrow-down"><GoDotFill/></i>
+            <i className="icon ion-md-arrow-forward">
+              <GoDot />
+            </i>
+            <i className="icon ion-md-arrow-down">
+              <GoDotFill />
+            </i>
           </a>
           <div className="answer">
             <p>TYPESCRIPT SQL MONGODB POSTGRESQL MYSQL BOOTSTRAP MATERIAL UI STYLED-COMPONENTS SASS</p>
           </div>
-          <hr/>
-      </k.AccordionItem>
-
-     </div>
-
-        </k.Container>
-
+          <hr />
+        </k.AccordionItem>
+      </div>
+    </k.Container>
   );
 };
 

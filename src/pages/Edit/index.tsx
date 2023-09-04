@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
-import Fetch from '../../helpers/Fetch'
-import * as k from './styles'
-import {  useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import Fetch from '../../helpers/Fetch';
+import * as k from './styles';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Project } from '../../types/types';
 import Loading from '../../components/Loading2';
 import { BiArrowToLeft } from 'react-icons/bi';
@@ -11,78 +11,77 @@ const Edit: React.FC = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   const [project, setProject] = useState<Project | null>(null);
-  const [title, setTitle] = useState<string>('')
-  const [desc, setDesc] = useState<string>('')
-  const [git, setGit] = useState<string>('')
-  const [deploy, setDeploy] = useState<string>('')
-  const [tech, setTech] = useState<string>('')
-
+  const [title, setTitle] = useState<string>('');
+  const [desc, setDesc] = useState<string>('');
+  const [git, setGit] = useState<string>('');
+  const [deploy, setDeploy] = useState<string>('');
+  const [tech, setTech] = useState<string>('');
 
   useEffect(() => {
     const fetchData = async () => {
       if (id) {
-        const data = await Fetch.getProject(id)
-        setProject(data)
-        setTitle(data.title)
-        setDesc(data.desc)
-        setGit(data.git)
-        setTech(data.tech)
-        setDeploy(data.deploy)
+        const data = await Fetch.getProject(id);
+        setProject(data);
+        setTitle(data.title);
+        setDesc(data.desc);
+        setGit(data.git);
+        setTech(data.tech);
+        setDeploy(data.deploy);
       }
-    }
-    fetchData()
-  }, [])
+    };
+    fetchData();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     const formData = new FormData();
-    if(!title){
-      Notify("Insira um título.")
-      return
+    if (!title) {
+      Notify('Insira um título.');
+      return;
     }
-    if(!desc){
-      Notify("Insira uma descrição.")
-      return
+    if (!desc) {
+      Notify('Insira uma descrição.');
+      return;
     }
-    if(!git){
-      Notify("Insira um repositório.")
-      return
+    if (!git) {
+      Notify('Insira um repositório.');
+      return;
     }
-    if(!deploy){
-      Notify("Insira um endereço.")
-      return
+    if (!deploy) {
+      Notify('Insira um endereço.');
+      return;
     }
-    if(!tech){
-      Notify("Insira as tecnologias.")
-      return
+    if (!tech) {
+      Notify('Insira as tecnologias.');
+      return;
     }
 
     if (title && desc && desc && git && deploy && tech) {
-      formData.append('title', title)
-      formData.append('desc', desc)
-      formData.append('git', git)
-      formData.append('deploy', deploy)
-      formData.append('tech', tech)
-      formData.append('id', id!)
-      setLoading(true)
+      formData.append('title', title);
+      formData.append('desc', desc);
+      formData.append('git', git);
+      formData.append('deploy', deploy);
+      formData.append('tech', tech);
+      formData.append('id', id!);
+      setLoading(true);
       await Fetch.editProject(formData);
-      navigate('/admin')
+      navigate('/admin');
     }
-  }
+  };
 
   return (
     <k.Container>
       {!project && <Loading />}
       {loading && <Loading />}
 
-      {project &&
+      {project && (
         <>
           <form onSubmit={handleSubmit}>
-          <div className="back">
-            <BiArrowToLeft />
-          </div>
+            <div className="back">
+              <BiArrowToLeft />
+            </div>
             <div className="title">Edição</div>
             <div className="subtitle">Edite seu projeto</div>
 
@@ -93,9 +92,12 @@ const Edit: React.FC = () => {
                 type="text"
                 placeholder=" "
                 value={title}
-                onChange={(e) => setTitle(e.target.value)} />
+                onChange={e => setTitle(e.target.value)}
+              />
               <div className="cut"></div>
-              <label htmlFor="title" className="placeholder">Título</label>
+              <label htmlFor="title" className="placeholder">
+                Título
+              </label>
             </div>
 
             <div className="image-container">
@@ -109,29 +111,42 @@ const Edit: React.FC = () => {
                 type="text"
                 placeholder=" "
                 value={desc}
-                onChange={(e) => setDesc(e.target.value)} />
+                onChange={e => setDesc(e.target.value)}
+              />
               <div className="cut"></div>
-              <label htmlFor="desc" className="placeholder">Descrição</label>
+              <label htmlFor="desc" className="placeholder">
+                Descrição
+              </label>
             </div>
 
             <div className="input-container ic2">
-              <input id="git"
-                className="input" type="text" placeholder=" "
+              <input
+                id="git"
+                className="input"
+                type="text"
+                placeholder=" "
                 value={git}
-                onChange={(e) => setGit(e.target.value)} />
+                onChange={e => setGit(e.target.value)}
+              />
               <div className="cut"></div>
-              <label htmlFor="git" className="placeholder">Repositório</label>
+              <label htmlFor="git" className="placeholder">
+                Repositório
+              </label>
             </div>
 
             <div className="input-container ic2">
               <input
                 id="deploy"
                 className="input"
-                type="text" placeholder=" "
+                type="text"
+                placeholder=" "
                 value={deploy}
-                onChange={(e) => setDeploy(e.target.value)} />
+                onChange={e => setDeploy(e.target.value)}
+              />
               <div className="cut"></div>
-              <label htmlFor="deploy" className="placeholder">Deploy</label>
+              <label htmlFor="deploy" className="placeholder">
+                Deploy
+              </label>
             </div>
 
             <div className="input-container ic2">
@@ -141,21 +156,20 @@ const Edit: React.FC = () => {
                 type="text"
                 placeholder=" "
                 value={tech}
-                onChange={(e) => setTech(e.target.value)} />
+                onChange={e => setTech(e.target.value)}
+              />
               <div className="cut"></div>
-              <label htmlFor="lastname" className="placeholder">Tecnologias</label>
+              <label htmlFor="lastname" className="placeholder">
+                Tecnologias
+              </label>
             </div>
 
             <button className="submit">Terminei</button>
           </form>
         </>
-      }
-
-
+      )}
     </k.Container>
-
-  )
-}
-
+  );
+};
 
 export default Edit;

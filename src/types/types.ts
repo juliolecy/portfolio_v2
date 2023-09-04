@@ -9,16 +9,14 @@ export interface Project {
 }
 
 export type User = {
-  id:number;
-  name:string;
+  id: number;
+  name: string;
   email: string;
   passwordHash: string;
-}
+};
 
 export type AuthContextType = {
   user: User | null;
-  signin: (email:string, password: string) =>Promise<boolean>
-  signout: ()=>void;
-
-
-}
+  signin: (email: string, password: string) => Promise<boolean>;
+  signout: () => void;
+};
