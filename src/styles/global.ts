@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
 *{
@@ -38,4 +38,4 @@ a{
     text-decoration:none;
     color: inherit;
 }
-`
+`;

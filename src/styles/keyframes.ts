@@ -7,7 +7,7 @@ export const scroll = keyframes`
 100%{
     transform: translateX(calc(-250px * 9))
 }
-`
+`;
 
 export const Morph = keyframes`
    0%, 5%, 100%{
@@ -18,7 +18,7 @@ export const Morph = keyframes`
         filter: blur(35px);
         opacity: 0;
     }
-`
+`;
 export const animate = keyframes`
     0%{
         background-position: -500%;
@@ -26,7 +26,7 @@ export const animate = keyframes`
     100%{
         background-position: 500%;
       }
-`
+`;
 export const GlitchAnim = keyframes`
   0% {
     clip: rect(82px, 9999px, 37px, 0);
@@ -108,8 +108,8 @@ export const GlitchAnim = keyframes`
     clip: rect(75px, 9999px, 83px, 0);
     transform: skew(0.24deg);
   }
-`
-export const GlitchAnim2 =keyframes`
+`;
+export const GlitchAnim2 = keyframes`
   0% {
     clip: rect(9px, 9999px, 32px, 0);
     transform: skew(0.48deg);
@@ -190,7 +190,7 @@ export const GlitchAnim2 =keyframes`
     clip: rect(4px, 9999px, 45px, 0);
     transform: skew(0.85deg);
   }
-`
+`;
 export const GlitchSkew = keyframes`
   0% {
     transform: skew(-3deg);
@@ -222,13 +222,13 @@ export const GlitchSkew = keyframes`
   90% {
     transform: skew(1deg);
   }
-`
+`;
 export const Arrow = keyframes`
 0%{opacity:0};
 40% {opacity:1};
 80% {opacity:0};
 100% {opacity:0};
-`
+`;
 export const Wave = keyframes`
   50%,
   75% {
@@ -238,7 +238,7 @@ export const Wave = keyframes`
   80%,
   100% {
     opacity: 0;
-  }`
+  }`;
 export const FadeIn = keyframes`
     from {
       opacity: 0;
@@ -246,7 +246,7 @@ export const FadeIn = keyframes`
     to {
 		opacity: 1;
 	}
-`
+`;
 
 export const ScaleDot = keyframes`
   40% {
@@ -259,4 +259,4 @@ export const ScaleDot = keyframes`
     transform: scale(1);
   }
 
-`
+`;

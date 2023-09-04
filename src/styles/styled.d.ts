@@ -1,17 +1,17 @@
 //Definindo a tipagem dos temas para o Styled-Components
 //Não esquecer de configurar o tsconfig files
-import 'styled-components'
+import 'styled-components';
 declare module 'styled-components' {
-    export interface DefaultTheme{
-        title: string;
+  export interface DefaultTheme {
+    title: string;
 
-        colors:{
-            primary: string;
-            secondary: string;
-            background: string;
-            text: string;
-            textSecondary: string;
-            textLogin: string;
-        }
-    }
+    colors: {
+      primary: string;
+      secondary: string;
+      background: string;
+      text: string;
+      textSecondary: string;
+      textLogin: string;
+    };
+  }
 }

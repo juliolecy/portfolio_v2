@@ -23,3 +23,13 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+return JsonResponse
+//As variaveis ... estão recebendo dados de um formulario a partir de inputs com o atributo name igual a
+// 5options = {'db_table':'bicicletas',
+ artista=request.user /;
+Concatenar uma url
+//<a href - '{{livro.nome}}/?capitulo={{livro.capitulo}} /
+/ python manage.py createsuperuser --username thanos
+// return HttpResponse('{} /
+/ Apenas 1 está errada

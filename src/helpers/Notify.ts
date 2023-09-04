@@ -1,5 +1,5 @@
-import { toast } from "react-toastify";
+import { toast } from 'react-toastify';
 
-export const Notify = (text:string) =>{
-    toast(text)
-}
+export const Notify = (text: string) => {
+  toast(text);
+};

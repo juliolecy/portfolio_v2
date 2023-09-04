@@ -1,0 +1,48 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin: @typescript-eslint/recommended",
+    "eslint-config-prettier"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "rules": {
+    "react/prop-types": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/self-closing-comp": "warn"
+    // Adicione quaisquer outras regras específicas do TypeScript aqui
+  },
+  "ignorePatterns": ["node_modules/", "dist/"],
+  "plugins": ["react", "import", "jsx-a11y"],
+  "parser": "@typescript-eslint/parser", // Use o parser do TypeScript
+  "parserOptions": {
+    "include": ["src/**/*"],
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": "./tsconfig.json" // Caminho para o seu arquivo tsconfig.json
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "jest": true,
+    "node": true
+  },
+  "root": true
+}
